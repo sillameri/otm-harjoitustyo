@@ -10,3 +10,6 @@
 
 
 muutoksia ->Paikallinen repositoriosi ja GitHubin etärepositorio ovat samassa tilassa
+
+
+lisää muutoksia.
