@@ -1,0 +1,123 @@
+commit 47bd3c2ae361ada63f54a1f8deb94add3cd032e4
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Fri Mar 16 14:59:05 2018 +0200
+
+    poisto, nimeys
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3de6d66b33cdd94ec209049aa8fb0050f8821e48
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Fri Mar 16 14:49:47 2018 +0200
+
+    muutos file3
+
+ tiedostoja/file3.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+commit f6a59d8d56adf94e6165e60395bdc0b3a95e9f02
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:58:20 2018 +0200
+
+    moi
+
+ tiedostoja/file1 | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 022e0d89489f63d8900091efdbc923db20fa8b85
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:50:55 2018 +0200
+
+    filet
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit bfb3cebadd4c132f6af67bbe768308a0558c86e4
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:44:37 2018 +0200
+
+    muutoksia eka ja kolmas
+
+ eka.txt    | 29 -----------------------------
+ kolmas.txt | 23 ++++++++++++++++++++++-
+ 2 files changed, 22 insertions(+), 30 deletions(-)
+
+commit b96f03c8600699a8eb747316f5b065ed0dbd2047
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:41:42 2018 +0200
+
+    poisto ja nimeys
+
+ tiedosto.txt => eka.txt | 0
+ toinen.txt              | 1 -
+ 2 files changed, 1 deletion(-)
+
+commit 9bc475f0b253186172649a0969d374f00ae754a2
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:36:44 2018 +0200
+
+    vähän poistettu
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 17557c4a9782fa1ba37c7138484a0f1aab2cc43c
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:34:11 2018 +0200
+
+    paljon tekstiä
+
+ tiedosto.txt | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+
+commit 81f81d6ec68a8ff2ce99b06bc8285f6e9eedcc62
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:27:31 2018 +0200
+
+    uudet
+
+ stuff/eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5aab833795097f374e5bac082614de6d14a615ed
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:24:20 2018 +0200
+
+    muutokset
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit ba1c70afea497ab18c5106998340483e0e2c162a
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:22:02 2018 +0200
+
+    lisäys2
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit fb2a09b3d246564468e40612598a5543f14e4b7d
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 21:17:24 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 277627d015d31c27b8debc94b785c281f4aff559
+Author: Meri Sillanpää <meri.sillanpaa@helsinki.fi>
+Date:   Tue Mar 13 20:25:53 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
