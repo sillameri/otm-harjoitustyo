@@ -19,16 +19,17 @@ Sovellus koostuu yhdestä näkymästä. Sovellus aukeaa valintanäkymään, jost
 ## Perusversion tarjoama toiminnallisuus
 
 Käyttäjä voi syöttää pelatulle pelille seuraavat tiedot:
--Lopullinen tarjous
-  trikkien määrä (1-7)
++Lopullinen tarjous
+
+  ⋅⋅⋅trikkien määrä (1-7)⋅⋅⋅
   valttimaa (valtiton,pata,hertta,ruutu,risti)
--Tarjous vaihtoehdot
++Tarjous vaihtoehdot
   normaali
   kahdennus
   vastakahdennus
   vaarassa
   vaaraton
--Tulos 
++Tulos 
   tikkien määrä (1-7)
   yli 
   ali
