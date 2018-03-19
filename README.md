@@ -8,10 +8,7 @@
 
 [komentorivi.txt](https://github.com/sillameri/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-[maarittelydokumentti.txt](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.txt)
+[maarittelydokumentti.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
 
 
-muutoksia ->Paikallinen repositoriosi ja GitHubin etärepositorio ovat samassa tilassa
 
-
-lisää muutoksia.
