@@ -13,7 +13,7 @@ Sovelluksella on ainoastaan yksi käyttäjärooli eli normaali käyttäjä.
 Sovellus koostuu yhdestä näkymästä. Sovellus aukeaa valintanäkymään, josta on mahdollista valitesemalla erän tiedot laskea erän pisteet. 
 
 ![GitHub Logo](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/kuva.png)
-Format: ![Alt Text](url)
+
 
 
 ## Perusversion tarjoama toiminnallisuus
