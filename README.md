@@ -8,6 +8,8 @@
 
 [komentorivi.txt](https://github.com/sillameri/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+### Viikko 2
+
 [maarittelydokumentti.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
 
 
