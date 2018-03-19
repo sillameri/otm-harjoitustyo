@@ -21,8 +21,8 @@ Sovellus koostuu yhdestä näkymästä. Sovellus aukeaa valintanäkymään, jost
 Käyttäjä voi syöttää pelatulle pelille seuraavat tiedot:
 
 -Lopullinen tarjous  
-  trikkien määrä (1-7)  
-  valttimaa (valtiton,pata,hertta,ruutu,risti)  
+  $\qquad$ trikkien määrä (1-7)  
+  $\qquad$ valttimaa (valtiton,pata,hertta,ruutu,risti)  
   
 -Tarjous vaihtoehdot  
   normaali  
