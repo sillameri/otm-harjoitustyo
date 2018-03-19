@@ -21,20 +21,20 @@ Sovellus koostuu yhdestä näkymästä. Sovellus aukeaa valintanäkymään, jost
 Käyttäjä voi syöttää pelatulle pelille seuraavat tiedot:
 
 -Lopullinen tarjous  
-  &nbsp; trikkien määrä (1-7)  
-  &nbsp; valttimaa (valtiton,pata,hertta,ruutu,risti)  
+  &nbsp;&nbsp;&nbsp; trikkien määrä (1-7)  
+  &nbsp;&nbsp;&nbsp; valttimaa (valtiton,pata,hertta,ruutu,risti)  
   
 -Tarjous vaihtoehdot  
-  normaali  
-  kahdennus  
-  vastakahdennus  
-  vaarassa  
-  vaaraton  
+  &nbsp;&nbsp;&nbsp; normaali  
+  &nbsp;&nbsp;&nbsp; kahdennus  
+  &nbsp;&nbsp;&nbsp; vastakahdennus  
+  &nbsp;&nbsp;&nbsp; vaarassa  
+  &nbsp;&nbsp;&nbsp; vaaraton  
   
 -Tulos   
-  tikkien määrä (1-7)  
-  yli  
-  ali  
+  &nbsp;&nbsp;&nbsp; tikkien määrä (1-7)  
+  &nbsp;&nbsp;&nbsp; yli  
+  &nbsp;&nbsp;&nbsp; ali  
   
 Syötteiden jälkeen valitaan joko laske tai tyhjennä  
 Laske komento laskee käden pistemäärän  
