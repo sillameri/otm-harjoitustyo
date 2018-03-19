@@ -19,23 +19,25 @@ Sovellus koostuu yhdestä näkymästä. Sovellus aukeaa valintanäkymään, jost
 ## Perusversion tarjoama toiminnallisuus
 
 Käyttäjä voi syöttää pelatulle pelille seuraavat tiedot:
-+Lopullinen tarjous
 
-  ⋅⋅⋅trikkien määrä (1-7)⋅⋅⋅
-  valttimaa (valtiton,pata,hertta,ruutu,risti)
-+Tarjous vaihtoehdot
-  normaali
-  kahdennus
-  vastakahdennus
-  vaarassa
-  vaaraton
-+Tulos 
-  tikkien määrä (1-7)
-  yli 
-  ali
+-Lopullinen tarjous  
+  trikkien määrä (1-7)  
+  valttimaa (valtiton,pata,hertta,ruutu,risti)  
   
-Syötteiden jälkeen valitaan joko laske tai tyhjennä
-Laske komento laskee käden pistemäärän
+-Tarjous vaihtoehdot  
+  normaali  
+  kahdennus  
+  vastakahdennus  
+  vaarassa  
+  vaaraton  
+  
+-Tulos   
+  tikkien määrä (1-7)  
+  yli  
+  ali  
+  
+Syötteiden jälkeen valitaan joko laske tai tyhjennä  
+Laske komento laskee käden pistemäärän  
 Tyhjennä komento tyhjentää kaikki kentät 
 
 ## Jatkokehitysideoita
