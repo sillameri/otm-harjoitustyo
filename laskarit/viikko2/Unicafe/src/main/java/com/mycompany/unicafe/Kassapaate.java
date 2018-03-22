@@ -55,9 +55,7 @@ public class Kassapaate {
         if (summa >= 0) {
             kortti.lataaRahaa(summa);
             this.kassassaRahaa += summa;
-        } else {
-            return;
-        }
+        } 
     }
 
     public int kassassaRahaa() {
