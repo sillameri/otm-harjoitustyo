@@ -17,9 +17,6 @@ import static org.junit.Assert.*;
  */
 public class MaksukorttiTest {
 
-    public MaksukorttiTest() {
-    }
-
     Maksukortti kortti;
 
     @Before
@@ -30,7 +27,9 @@ public class MaksukorttiTest {
     @Test
     public void konstruktoriAsettaaSaldonOikein() {
         assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
+
     }
+    
 
     @Test
     public void syoEdullisestiVahentaaSaldoaOikein() {
@@ -53,6 +52,14 @@ public class MaksukorttiTest {
     }
 
     @Test
+    public void syoMaukkaastiEiVieSaldoaNegatiiviseksi() {
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        kortti.syoMaukkaasti();
+        assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
+    }
+
+    @Test
     public void kortilleVoiLadataRahaa() {
         kortti.lataaRahaa(25);
         assertEquals("Kortilla on rahaa 35.0 euroa", kortti.toString());
@@ -65,30 +72,22 @@ public class MaksukorttiTest {
     }
 
     @Test
-    public void syoMaukkaastiEiVieSaldoaNegatiiviseksi() {
-        kortti.syoMaukkaasti();
-        kortti.syoMaukkaasti();
-        kortti.syoMaukkaasti();
-        assertEquals("Kortilla on rahaa 2.0 euroa", kortti.toString());
-    }
-
-    @Test
-    public void kortilleEiVoiLadataNegatiivistaSummaa() {
+    public void NegatiivinenSummaEiMuutaSaldoa() {
         kortti.lataaRahaa(-25);
         assertEquals("Kortilla on rahaa 10.0 euroa", kortti.toString());
     }
 
     @Test
-    public void kortillaVoiOstaaEdullisenKunKortillaSenVerranRahaa() {
+    public void VoiOstaaJosRahaaEdullisenVerran() {
         Maksukortti kortti1 = new Maksukortti(2.5);
         kortti1.syoEdullisesti();
         assertEquals("Kortilla on rahaa 0.0 euroa", kortti1.toString());
     }
 
     @Test
-    public void kortillaVoiOstaaMaukkaanKunKortillaSenVerranRahaa() {
-        Maksukortti kortti2 = new Maksukortti(4);
-        kortti2.syoMaukkaasti();
-        assertEquals("Kortilla on rahaa 0.0 euroa", kortti2.toString());
+    public void VoiOstaaJosRahaaMaukkaanVerran() {
+        Maksukortti kortti1 = new Maksukortti(4.0);
+        kortti1.syoMaukkaasti();
+        assertEquals("Kortilla on rahaa 0.0 euroa", kortti1.toString());
     }
 }

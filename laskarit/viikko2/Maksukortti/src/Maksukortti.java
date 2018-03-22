@@ -10,11 +10,11 @@
  */
 public class Maksukortti {
 
-    private double arvo;
+    private int arvo;
     private final double EDULLINEN = 2.5;
     private final double MAUKAS = 4.0;
 
-    public Maksukortti(double arvoaAlussa) {
+    public Maksukortti(int arvoaAlussa) {
         this.arvo = arvoaAlussa;
     }
 
@@ -23,6 +23,7 @@ public class Maksukortti {
             this.arvo -= EDULLINEN;
         }
     }
+    
 
     public void syoMaukkaasti() {
         if (this.arvo >= MAUKAS) {
