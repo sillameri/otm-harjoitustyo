@@ -15,5 +15,5 @@
 
 ## Työaikakirjanpito
 
-[työaikakirjanpito.md] (https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)
+[työaikakirjanpito.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)
 
