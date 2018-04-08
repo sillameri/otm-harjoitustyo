@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="283.0" prefWidth="386.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mycompany.bridgepointcalculator.FXMLController">
+    <children>
+        <Button fx:id="button" layoutX="71.0" layoutY="196.0" onAction="#handleButtonAction" text="Laske" />
+        <Label fx:id="label" layoutX="71.0" layoutY="237.0" minHeight="16" minWidth="69" prefHeight="27.0" prefWidth="227.0" />
+      <Button fx:id="tyhja" layoutX="164.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Tyhjennä" />
+      <Text layoutX="57.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trikki:" />
+      <Text layoutX="57.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maa:" />
+      <TextField fx:id="trikkiAlue" layoutX="110.0" layoutY="52.0" />
+      <TextField fx:id="MaaAlue" layoutX="110.0" layoutY="89.0" />
+    </children>
+</AnchorPane>
