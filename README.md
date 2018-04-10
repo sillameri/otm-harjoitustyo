@@ -1,19 +1,16 @@
-# OTM-harjoitustyö
+# Bridge Pistelaskuri
 
-## Tehtävät
+Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet, sekä viivan alle että päälle.
 
-### Viikko 1
 
-[gitlog.txt](https://github.com/sillameri/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/sillameri/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-### Viikko 2
-
+## Dokumentaatio
 [maarittelydokumentti.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
-
-
-## Työaikakirjanpito
-
 [työaikakirjanpito.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)
 
+### Testaus
+
+Testit suoritetaan komennolla:  mvn test
+
+Testikattavuusraportti luodaan komennolla: mvn jacoco:report
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
