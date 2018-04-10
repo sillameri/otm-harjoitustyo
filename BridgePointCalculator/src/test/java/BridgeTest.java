@@ -5,6 +5,7 @@
  */
 
 import com.mycompany.bridgepointcalculator.FXMLController;
+import com.mycompany.bridgepointcalculator.Laskin;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,27 +18,31 @@ import static org.junit.Assert.*;
  * @author Meri
  */
 public class BridgeTest {
-    
+
     public BridgeTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+    Laskin laskin;
+
     @Before
     public void setUp() {
+        laskin = new Laskin("pata", 3, 2, "yli");;
+
+    }
+
+    @Test
+    public void luotuLaskinOlemassa() {
+        assertTrue(laskin != null);
+    }
+
+    @Test
+    public void palauttaaTrikin() {
+        assertEquals(3, laskin.getTrikki());
     }
     
-    @After
-    public void tearDown() {
+    @Test
+    public void palauttaaTikin() {
+        assertEquals(2, laskin.getTikki());
     }
-    
-  
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

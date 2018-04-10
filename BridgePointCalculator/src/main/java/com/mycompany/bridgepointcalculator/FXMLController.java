@@ -19,6 +19,7 @@ public class FXMLController implements Initializable {
     ObservableList maat = FXCollections.observableArrayList();
     ObservableList trikit = FXCollections.observableArrayList();
     ObservableList tulosTikit = FXCollections.observableArrayList();
+    private Laskin laskin;
 
     @FXML
     private Label label;
@@ -31,7 +32,7 @@ public class FXMLController implements Initializable {
     @FXML
     private TextField MaaAlue;
     @FXML
-    private ChoiceBox<String> trikkiValinta;
+    private ChoiceBox<Integer> trikkiValinta;
     @FXML
     private ChoiceBox<String> maaValinta;
     @FXML
@@ -59,7 +60,13 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-
+        String maa = (String) maaValinta.getValue();
+        int trikki = (Integer) trikkiValinta.getValue();
+        int tikki = (Integer) tulosTikki.getValue();
+        String tulos = tulosValittu(event);
+       
+        Laskin laskin = new Laskin(maa,trikki,tikki,tulos);
+        label.setText(laskin.toString());
         
     }
 
@@ -68,16 +75,17 @@ public class FXMLController implements Initializable {
         lataaMaat();
         lataaTrikit();
         lataaTulosTikit();
+        
     }
     
-    public void tulosValittu(ActionEvent event){
+    public String tulosValittu(ActionEvent event){
         String viesti = "";
         if(tulosAli.isSelected()){
             viesti += tulosAli.getText() + "\n";
         }if(tulosYli.isSelected()){
             viesti += tulosYli.getText() + "\n";
         }
-        label.setText(viesti);
+        return viesti;
     }
 
     private void lataaMaat() {
@@ -93,20 +101,6 @@ public class FXMLController implements Initializable {
 
     private void lataaTrikit() {
         trikit.removeAll(trikit);
-        String a = "1";
-        String b = "2";
-        String c = "3";
-        String d = "4";
-        String e = "5";
-        String f = "6";
-        String g = "7";
-        trikit.addAll(a, b, c, d, e, f, g);
-        trikkiValinta.getItems().addAll(trikit);
-
-    }
-
-    private void lataaTulosTikit() {
-        tulosTikit.removeAll(trikit);
         int a = 1;
         int b = 2;
         int c = 3;
@@ -114,7 +108,22 @@ public class FXMLController implements Initializable {
         int e = 5;
         int f = 6;
         int g = 7;
-        tulosTikit.addAll(a, b, c, d, e, f, g);
+        trikit.addAll(a, b, c, d, e, f, g);
+        trikkiValinta.getItems().addAll(trikit);
+
+    }
+
+    private void lataaTulosTikit() {
+        tulosTikit.removeAll(trikit);
+        int x = 0;
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        int d = 4;
+        int e = 5;
+        int f = 6;
+        int g = 7;
+        tulosTikit.addAll(x, a, b, c, d, e, f, g);
         tulosTikki.getItems().addAll(tulosTikit);
 
     }
