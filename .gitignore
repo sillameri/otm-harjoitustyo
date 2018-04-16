@@ -10,5 +10,5 @@
 .DS_Store
 /BridgeCalculator/target/
 /BridgeCalculator/nbproject/
-/nbactions.xml
-/nb-configuration.xml
+/BridgeCalculator/nbactions.xml
+/BridgeCalculator/nb-configuration.xml
