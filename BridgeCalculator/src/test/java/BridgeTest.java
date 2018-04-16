@@ -4,14 +4,13 @@
  * and open the template in the editor.
  */
 
-import com.mycompany.bridgepointcalculator.FXMLController;
-import bridge.domain.Laskin;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import bridgecalculator.domain.Laskin;
 
 /**
  *
@@ -21,11 +20,12 @@ public class BridgeTest {
 
     public BridgeTest() {
     }
+
     Laskin laskin;
 
     @Before
     public void setUp() {
-        laskin = new Laskin("pata", 3, 2, "yli","Normaali","Vaaraton");;
+        laskin = new Laskin("pata", 3, 2, "yli", "Normaali", "Vaaraton");;
 
     }
 
@@ -38,7 +38,7 @@ public class BridgeTest {
     public void palauttaaTrikin() {
         assertEquals(3, laskin.getTrikki());
     }
-    
+
     @Test
     public void palauttaaTikin() {
         assertEquals(2, laskin.getTikki());

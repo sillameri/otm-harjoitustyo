@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bridge.domain;
+package bridgecalculator.domain;
 
 /**
  *
@@ -78,7 +78,8 @@ public class Laskin {
             pisteet = 40;
             for (int i = 0; i < getTikki() - 1; i++) {
                 pisteet += 30;
-            }if(getTikki()==0){
+            }
+            if (getTikki() == 0) {
                 pisteet = 0;
             }
         }

@@ -1,6 +1,6 @@
-package com.mycompany.bridgepointcalculator;
+package bridgecalculator.ui;
 
-import bridge.domain.Laskin;
+import bridgecalculator.domain.Laskin;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -12,11 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class FXMLController implements Initializable {
-
+    
+    
     ObservableList maat = FXCollections.observableArrayList();
     ObservableList trikit = FXCollections.observableArrayList();
     ObservableList tulosTikit = FXCollections.observableArrayList();
@@ -25,35 +25,35 @@ public class FXMLController implements Initializable {
     @FXML
     private Label label;
     @FXML
-    private Button button;
+    private RadioButton tulosAli;
     @FXML
-    private Button tyhja;
+    private ToggleGroup tulos;
     @FXML
-    private ChoiceBox<Integer> trikkiValinta;
+    private RadioButton tulosYli;
     @FXML
-    private ChoiceBox<String> maaValinta;
+    private ChoiceBox<?> tulosTikki;
     @FXML
-    private RadioButton normaali;
+    private RadioButton vaarassa;
+    @FXML
+    private ToggleGroup vaara;
+    @FXML
+    private RadioButton vaaraton;
+    @FXML
+    private RadioButton vasta;
     @FXML
     private ToggleGroup tuplaus;
     @FXML
     private RadioButton kahdenettu;
     @FXML
-    private RadioButton vasta;
+    private RadioButton normaali;
     @FXML
-    private RadioButton vaaraton;
+    private ChoiceBox<?> maaValinta;
     @FXML
-    private ToggleGroup vaara;
+    private ChoiceBox<?> trikkiValinta;
     @FXML
-    private RadioButton vaarassa;
+    private Button tyhja;
     @FXML
-    private ChoiceBox<Integer> tulosTikki;
-    @FXML
-    private RadioButton tulosYli;
-    @FXML
-    private ToggleGroup tulos;
-    @FXML
-    private RadioButton tulosAli;
+    private Button button;
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -63,10 +63,10 @@ public class FXMLController implements Initializable {
         String tulos = tulosValittu(event);
         String tuplaus = tupalusValittu(event);
         String vaara = vaaraValittu(event);
-       
-        Laskin laskin = new Laskin(maa,trikki,tikki,tulos,tuplaus,vaara);
+
+        Laskin laskin = new Laskin(maa, trikki, tikki, tulos, tuplaus, vaara);
         label.setText(laskin.toString());
-        
+
     }
 
     @Override
@@ -74,39 +74,43 @@ public class FXMLController implements Initializable {
         lataaMaat();
         lataaTrikit();
         lataaTulosTikit();
-        
+
     }
-    
+
     @FXML
-    public String tulosValittu(ActionEvent event){
+    public String tulosValittu(ActionEvent event) {
         String viesti = "";
-        if(tulosAli.isSelected()){
+        if (tulosAli.isSelected()) {
             viesti += tulosAli.getText();
-        }if(tulosYli.isSelected()){
+        }
+        if (tulosYli.isSelected()) {
             viesti += tulosYli.getText();
         }
         return viesti;
     }
-    
+
     @FXML
-    public String tupalusValittu(ActionEvent event){
+    public String tupalusValittu(ActionEvent event) {
         String viesti = "";
-        if(normaali.isSelected()){
+        if (normaali.isSelected()) {
             viesti += normaali.getText();
-        }if(kahdenettu.isSelected()){
+        }
+        if (kahdenettu.isSelected()) {
             viesti += kahdenettu.getText();
-        }if(vasta.isSelected()){
+        }
+        if (vasta.isSelected()) {
             viesti += vasta.getText();
         }
         return viesti;
     }
-    
+
     @FXML
-    public String vaaraValittu(ActionEvent event){
+    public String vaaraValittu(ActionEvent event) {
         String viesti = "";
-        if(vaarassa.isSelected()){
+        if (vaarassa.isSelected()) {
             viesti += vaarassa.getText();
-        }if(vaaraton.isSelected()){
+        }
+        if (vaaraton.isSelected()) {
             viesti += vaaraton.getText();
         }
         return viesti;

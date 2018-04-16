@@ -1,4 +1,4 @@
-package com.mycompany.bridgepointcalculator;
+package bridgecalculator.ui;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -12,12 +12,12 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/FXMLAloitusSivu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/AloitusSivu.fxml"));
         
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css");
         
-        stage.setTitle("Bridge Point Calculator");
+        stage.setTitle("Bridge Calculator");
         stage.setScene(scene);
         stage.show();
     }

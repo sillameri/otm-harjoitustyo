@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.bridgepointcalculator;
+package bridgecalculator.ui;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author Meri
  */
-public class FXMLAloitusSivuController implements Initializable {
+public class AloitusSivuController implements Initializable {
 
     @FXML
     private Button siirry;
@@ -34,7 +34,7 @@ public class FXMLAloitusSivuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+    }    
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException{
@@ -47,5 +47,5 @@ public class FXMLAloitusSivuController implements Initializable {
         window.setScene(aloitusSivuScene);
         window.show();
     }
-
+    
 }

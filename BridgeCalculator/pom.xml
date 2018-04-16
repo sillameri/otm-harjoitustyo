@@ -2,24 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.mycompany</groupId>
-    <artifactId>BridgePointCalculator</artifactId>
+    <groupId>bridgecalculator</groupId>
+    <artifactId>BridgeCalculator</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>BridgePointCalculator</name>
+    <name>BridgeCalculator</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>com.mycompany.bridgepointcalculator.MainApp</mainClass>
+        <mainClass>bridgecalculator.ui.MainApp</mainClass>
     </properties>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
         <name>Your Organisation</name>
     </organization>
-    
-    
+
     <build>
         <plugins>
             <plugin>
@@ -28,7 +27,7 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>com/mycompany/bridgepointcalculator/*</exclude>
+                        <exclude>bridgecalculator/ui/**/*</exclude>
                     </excludes>
                 </configuration> 
                 <executions>
@@ -124,8 +123,6 @@
         </plugins>
     </build>
     <dependencies>
-     
-     
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

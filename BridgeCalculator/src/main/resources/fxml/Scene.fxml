@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.FXMLController">
+   <children>
+      <RadioButton fx:id="tulosAli" layoutX="207.0" layoutY="431.0" mnemonicParsing="false" onAction="#tulosValittu" text="Ali">
+         <toggleGroup>
+            <ToggleGroup fx:id="tulos" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="tulosYli" layoutX="207.0" layoutY="397.0" mnemonicParsing="false" onAction="#tulosValittu" text="Yli" toggleGroup="$tulos" />
+      <Text layoutX="188.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tikki:" />
+      <ChoiceBox fx:id="tulosTikki" layoutX="233.0" layoutY="344.0" prefWidth="150.0" />
+      <Text layoutX="92.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tulos:" />
+      <RadioButton fx:id="vaarassa" layoutX="208.0" layoutY="304.0" mnemonicParsing="false" text="Vaarassa">
+         <toggleGroup>
+            <ToggleGroup fx:id="vaara" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="vaaraton" layoutX="208.0" layoutY="276.0" mnemonicParsing="false" text="Vaaraton" toggleGroup="$vaara" />
+      <RadioButton fx:id="vasta" layoutX="208.0" layoutY="247.0" mnemonicParsing="false" text="Vastakahdennettu">
+         <toggleGroup>
+            <ToggleGroup fx:id="tuplaus" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="kahdenettu" layoutX="208.0" layoutY="220.0" mnemonicParsing="false" text="Kahdennettu" toggleGroup="$tuplaus" />
+      <RadioButton fx:id="normaali" layoutX="208.0" layoutY="193.0" mnemonicParsing="false" text="Normaali" toggleGroup="$tuplaus" />
+      <Text layoutX="46.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarjous olosuhteet:" />
+      <ChoiceBox fx:id="maaValinta" layoutX="233.0" layoutY="148.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="trikkiValinta" layoutX="233.0" layoutY="102.0" prefWidth="150.0" />
+      <Text layoutX="80.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarjous:" />
+      <Text layoutX="122.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bridge Pistelaskuri">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="187.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maa:" />
+      <Text layoutX="183.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trikki:" />
+      <Button fx:id="tyhja" layoutX="239.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Tyhjennä" />
+      <Label fx:id="label" layoutX="28.0" layoutY="515.0" minHeight="16" minWidth="69" prefHeight="90.0" prefWidth="411.0" />
+      <Button fx:id="button" layoutX="137.0" layoutY="479.0" onAction="#handleButtonAction" text="Laske" />
+   </children>
+</AnchorPane>
