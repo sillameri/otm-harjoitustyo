@@ -25,7 +25,7 @@ public class BridgeTest {
 
     @Before
     public void setUp() {
-        laskin = new Laskin("pata", 3, 2, "yli", "Normaali", "Vaaraton");;
+        laskin = new Laskin("Pata", 3, 2, "Yli", "Normaali", "Vaaraton");;
 
     }
 
@@ -42,6 +42,26 @@ public class BridgeTest {
     @Test
     public void palauttaaTikin() {
         assertEquals(2, laskin.getTikki());
+    }
+    
+     @Test
+    public void palauttaaMaakertoimen() {
+        assertEquals(30, laskin.getMaaKerroin());
+    }
+    
+     @Test
+    public void palauttaaPisteetAlleViivan() {
+        assertEquals(90, laskin.laskeAlleLinjan());
+    }
+    
+     @Test
+    public void palauttaaPisteetViivanPaalle() {
+        assertEquals(60, laskin.laskeYliLinjan());
+    }
+    
+     @Test
+    public void palauttaaHavitytPisteet() {
+        assertEquals(0, laskin.laskeHavitytPisteet());
     }
 
     // TODO add test methods here.

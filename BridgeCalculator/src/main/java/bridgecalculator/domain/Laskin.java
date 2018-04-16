@@ -36,13 +36,6 @@ public class Laskin {
         return this.tikki;
     }
 
-    public String getTuplaus() {
-        return this.tuplaus;
-    }
-
-    public String getVaara() {
-        return this.vaara;
-    }
 
     public int getMaaKerroin() {
         int kerroin = 0;

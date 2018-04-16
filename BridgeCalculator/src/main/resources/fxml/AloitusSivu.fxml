@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -8,11 +9,21 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.AloitusSivuController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="495.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.AloitusSivuController">
    <children>
-      <Text layoutX="239.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aloitussivu" />
-      <Text layoutX="258.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blaa blaa blaa" wrappingWidth="27.21875" />
-      <Button fx:id="siirry" layoutX="242.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Siirry" />
-      <Text layoutX="141.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lisää tekstiä testattavaksi" />
+      <Text layoutX="201.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aloitussivu">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="siirry" layoutX="47.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Lisää kierroksen pisteet" />
+      <Text layoutX="152.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tänne koko pelin yhteispisteet " />
+      <Text layoutX="40.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="painikkeen kautta voidaan listätä peliin yhden kierroksen pisteet" wrappingWidth="190.72802734375" />
+      <Text layoutX="177.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NS" />
+      <Text layoutX="293.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EW" />
+      <Text layoutX="259.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pisteitä tulee pelin kulusta riippuen viivan alle ja viivan päälle, pelissä on kaksi joukkuetta (North South) ja (East West)" wrappingWidth="208.1484375" />
+      <Line endX="100.0" layoutX="247.0" layoutY="282.0" startX="-100.0" />
+      <Line endX="140.0" layoutX="247.0" layoutY="283.0" rotate="90.0" startX="-140.0" />
+      <Button layoutX="234.0" layoutY="539.0" mnemonicParsing="false" text="Poista edellisen kierroksen pisteet" />
    </children>
 </AnchorPane>

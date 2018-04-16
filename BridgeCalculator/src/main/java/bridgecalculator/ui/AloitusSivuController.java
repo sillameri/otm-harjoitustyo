@@ -41,7 +41,6 @@ public class AloitusSivuController implements Initializable {
         Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         Scene aloitusSivuScene = new Scene(aloitusSivuParent);
 
-        //This line gets the Stage information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(aloitusSivuScene);
