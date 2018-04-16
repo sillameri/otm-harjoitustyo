@@ -1,5 +1,6 @@
 package com.mycompany.bridgepointcalculator;
 
+import bridge.domain.Laskin;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -27,10 +28,6 @@ public class FXMLController implements Initializable {
     private Button button;
     @FXML
     private Button tyhja;
-    @FXML
-    private TextField trikkiAlue;
-    @FXML
-    private TextField MaaAlue;
     @FXML
     private ChoiceBox<Integer> trikkiValinta;
     @FXML
@@ -64,8 +61,10 @@ public class FXMLController implements Initializable {
         int trikki = (Integer) trikkiValinta.getValue();
         int tikki = (Integer) tulosTikki.getValue();
         String tulos = tulosValittu(event);
+        String tuplaus = tupalusValittu(event);
+        String vaara = vaaraValittu(event);
        
-        Laskin laskin = new Laskin(maa,trikki,tikki,tulos);
+        Laskin laskin = new Laskin(maa,trikki,tikki,tulos,tuplaus,vaara);
         label.setText(laskin.toString());
         
     }
@@ -78,12 +77,37 @@ public class FXMLController implements Initializable {
         
     }
     
+    @FXML
     public String tulosValittu(ActionEvent event){
         String viesti = "";
         if(tulosAli.isSelected()){
-            viesti += tulosAli.getText() + "\n";
+            viesti += tulosAli.getText();
         }if(tulosYli.isSelected()){
-            viesti += tulosYli.getText() + "\n";
+            viesti += tulosYli.getText();
+        }
+        return viesti;
+    }
+    
+    @FXML
+    public String tupalusValittu(ActionEvent event){
+        String viesti = "";
+        if(normaali.isSelected()){
+            viesti += normaali.getText();
+        }if(kahdenettu.isSelected()){
+            viesti += kahdenettu.getText();
+        }if(vasta.isSelected()){
+            viesti += vasta.getText();
+        }
+        return viesti;
+    }
+    
+    @FXML
+    public String vaaraValittu(ActionEvent event){
+        String viesti = "";
+        if(vaarassa.isSelected()){
+            viesti += vaarassa.getText();
+        }if(vaaraton.isSelected()){
+            viesti += vaaraton.getText();
         }
         return viesti;
     }

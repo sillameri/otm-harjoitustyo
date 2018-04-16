@@ -5,7 +5,7 @@
  */
 
 import com.mycompany.bridgepointcalculator.FXMLController;
-import com.mycompany.bridgepointcalculator.Laskin;
+import bridge.domain.Laskin;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -25,7 +25,7 @@ public class BridgeTest {
 
     @Before
     public void setUp() {
-        laskin = new Laskin("pata", 3, 2, "yli");;
+        laskin = new Laskin("pata", 3, 2, "yli","Normaali","Vaaraton");;
 
     }
 
