@@ -13,5 +13,6 @@
       <Text layoutX="239.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aloitussivu" />
       <Text layoutX="258.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blaa blaa blaa" wrappingWidth="27.21875" />
       <Button fx:id="siirry" layoutX="242.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Siirry" />
+      <Text layoutX="141.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lisää tekstiä testattavaksi" />
    </children>
 </AnchorPane>
