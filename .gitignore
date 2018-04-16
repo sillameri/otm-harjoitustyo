@@ -8,7 +8,7 @@
 /laskarit/viikko2/Unicafe/nbproject/
 
 .DS_Store
-
 /BridgeCalculator/target/
 /BridgeCalculator/nbproject/
-
+/nbactions.xml
+/nb-configuration.xml
