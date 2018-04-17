@@ -10,4 +10,4 @@
 | 10.4          | 1,5             |toiminnallisuuksien luominen ohjelmaan            |
 | 16.4          | 5            |ohjelman laajentaminen ja toisen näkymän luominen           |
 | 17.4          | 3            |checkstyle ja testien lisääminen            |
-| tunteja yhteensä | 18             |           |
+| tunteja yhteensä | 16             |           |
