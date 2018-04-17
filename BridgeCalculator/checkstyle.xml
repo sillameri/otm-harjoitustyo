@@ -87,6 +87,8 @@ and open the template in the editor.
         <property name='max' value='200' />
     </module>
 
-   
+    <module name="SuppressionFilter">
+        <property name="file" value="skipped_files.xml" />
+    </module>
 
 </module>
