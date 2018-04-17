@@ -9,9 +9,9 @@ Pakkaus bridgecalculator.dao tulee sisältämään koodin, joka vastaa pysyväis
 
 ## Käyttöliittymä
  
-Käyttöliittymä sisältää kaksi erilaista näkymää. 
--Pelin kokonaispisteiden näkymä  
--Erän pisteiden lisääminen  
+Käyttöliittymä sisältää kaksi erilaista näkymää.  
+-Pelin kokonaispisteiden näkymä   
+-Erän pisteiden lisääminen   
  
 Näkymät on muodostettu Scenebuilderin avulla ja käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta.
 
