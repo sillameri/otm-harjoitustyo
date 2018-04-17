@@ -1,6 +1,6 @@
 # Bridge Pistelaskuri
 
-Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet, sekä viivan alle että päälle.
+Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet.
 
 
 ## Dokumentaatio
@@ -8,10 +8,20 @@ Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet, sekä viivan a
 
 [työaikakirjanpito.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)
 
+[arkkitehtuuri.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+
+## Komentorivitoiminnot
+
 ### Testaus
 
 Testit suoritetaan komennolla:  mvn test
-
-Testikattavuusraportti luodaan komennolla: mvn jacoco:report
-
+Testikattavuusraportti luodaan komennolla: mvn jacoco:report  
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/jacoco/index.html
+
+
+### Checkstyle
+
+Tiedostoon checkstyle.xml määrittelemät tarkistukset suoritetaan komennolla: mvn jxr:jxr checkstyle:checkstyle
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/checkstyle.html
+
+
