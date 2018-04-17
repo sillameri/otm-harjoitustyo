@@ -7,7 +7,7 @@ bridgecalculator.domain sisältää luokan laskin, joka lasekee annettujen arvoj
 
 Pakkaus bridgecalculator.dao tulee sisältämään koodin, joka vastaa pysyväistalletuksesta.
 
-##Käyttölittymä
+## Käyttöliittymä
  
 Käyttöliittymä sisältää kaksi erilaista näkymää. 
 -Pelin kokonaispisteiden näkymä  
@@ -15,8 +15,8 @@ Käyttöliittymä sisältää kaksi erilaista näkymää.
  
 Näkymät on muodostettu Scenebuilderin avulla ja käyttöliittymä on pyritty eristämään täysin sovelluslogiikasta.
 
-##Luokkakaavio
+## Luokkakaavio
 Tällä hetkellä ohjelmassa on käyttöiliittymäluokkien lisäksi vain yksi luokka "Laskin", joka laskee erän aikana saadut pisteet.
 Alla alustava luokkakaavio, jossa Eränpisteet luokka toteuttaa samaa toiminnallisuutta, jota luokka "Laskin" toteuttaa tällä hetkellä.
 
-(https://yuml.me/442a1aa3.jpg)
+![kuva](https://yuml.me/442a1aa3.jpg)
