@@ -26,5 +26,5 @@ Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto target/site/che
 
 ### Suoritettavan jarin generointi
 
-jar-tiedosto luodaan komennolla: mvn package
+jar-tiedosto luodaan komennolla: mvn package  
 Tämän jälkeen ohjelman voi suorittaa komennolla: java -jar BridgeCalculator-1.0-SNAPSHOT.jar
