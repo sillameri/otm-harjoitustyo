@@ -10,6 +10,11 @@ Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet.
 
 [arkkitehtuuri.md](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
+
+## Releaset
+
+[viikko5](https://github.com/sillameri/otm-harjoitustyo/releases/tag/viikko5)
+
 ## Komentorivitoiminnot
 
 ### Testaus
