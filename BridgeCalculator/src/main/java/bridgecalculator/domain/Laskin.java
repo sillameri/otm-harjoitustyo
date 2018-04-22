@@ -10,7 +10,8 @@ package bridgecalculator.domain;
  * @author Meri
  */
 public class Laskin {
-
+    
+    private String team;
     private String maa;
     private int trikki;
     private int tikki;
@@ -18,7 +19,8 @@ public class Laskin {
     private String tuplaus;
     private String vaara;
 
-    public Laskin(String maa, int trikki, int tikki, String tulos, String tuplaus, String vaara) {
+    public Laskin(String team, String maa, int trikki, int tikki, String tulos, String tuplaus, String vaara) {
+        this.team = team;
         this.maa = maa;
         this.trikki = trikki;
         this.tikki = tikki;
@@ -34,6 +36,10 @@ public class Laskin {
 
     public int getTikki() {
         return this.tikki;
+    }
+    
+    public String getTeam(){
+        return this.team;
     }
 
 
@@ -117,7 +123,7 @@ public class Laskin {
 
     @Override
     public String toString() {
-        return "Tarjous: " + trikki + " " + maa + ". Tulos: " + tikki + " " + tulos + "\n"
+        return "Tarjous: " + trikki + " " + maa +" joukkue: "+ team +". Tulos: " + tikki + " " + tulos + "\n"
                 + "Voitetut pisteet alle linjan: " + laskeAlleLinjan() + "\n"
                 + "Voitetut pisteet linjan päälle: " + laskeYliLinjan() + "\n"
                 + "Hävityt pisteet: " + laskeHavitytPisteet();

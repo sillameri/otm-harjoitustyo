@@ -1,134 +1,177 @@
 package bridgecalculator.ui;
 
+import bridgecalculator.domain.GamePoints;
 import bridgecalculator.domain.Laskin;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 public class FXMLController implements Initializable {
-    
-    
-    ObservableList maat = FXCollections.observableArrayList();
-    ObservableList trikit = FXCollections.observableArrayList();
-    ObservableList tulosTikit = FXCollections.observableArrayList();
+
+    ObservableList suits = FXCollections.observableArrayList();
+    ObservableList contractTricks = FXCollections.observableArrayList();
+    ObservableList resultTricks = FXCollections.observableArrayList();
     private Laskin laskin;
+    private GamePoints gamePoints;
 
     @FXML
     private Label label;
     @FXML
-    private RadioButton tulosAli;
+    private RadioButton down;
+    @FXML
+    private RadioButton over;
+    @FXML
+    private ChoiceBox<?> resultTrickSelected;
+    @FXML
+    private RadioButton vulnerable;
+    @FXML
+    private RadioButton unVulnerable;
+    @FXML
+    private RadioButton reDoubled;
+    @FXML
+    private RadioButton doubled;
+    @FXML
+    private RadioButton normal;
+    @FXML
+    private ChoiceBox<?> suitSelected;
+    @FXML
+    private ChoiceBox<?> contractTrickSelected;
+    @FXML
+    private Button calculate;
+    @FXML
+    private Button addPoints;
+    @FXML
+    private RadioButton ns;
+    @FXML
+    private RadioButton ew;
     @FXML
     private ToggleGroup tulos;
     @FXML
-    private RadioButton tulosYli;
-    @FXML
-    private ChoiceBox<?> tulosTikki;
-    @FXML
-    private RadioButton vaarassa;
-    @FXML
     private ToggleGroup vaara;
-    @FXML
-    private RadioButton vaaraton;
-    @FXML
-    private RadioButton vasta;
     @FXML
     private ToggleGroup tuplaus;
     @FXML
-    private RadioButton kahdenettu;
+    private ToggleGroup team;
     @FXML
-    private RadioButton normaali;
-    @FXML
-    private ChoiceBox<?> maaValinta;
-    @FXML
-    private ChoiceBox<?> trikkiValinta;
-    @FXML
-    private Button tyhja;
-    @FXML
-    private Button button;
+    private Button getBack;
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        String maa = (String) maaValinta.getValue();
-        int trikki = (Integer) trikkiValinta.getValue();
-        int tikki = (Integer) tulosTikki.getValue();
-        String tulos = tulosValittu(event);
-        String tuplaus = tupalusValittu(event);
-        String vaara = vaaraValittu(event);
+        String team = selectedTeam(event);
+        String suit = (String) suitSelected.getValue();
+        int contractTrick = (Integer) contractTrickSelected.getValue();
+        int resultTrick = (Integer) resultTrickSelected.getValue();
+        String resultOption = selectedResult(event);
+        String normalOption = selectedNormalOption(event);
+        String vunerableOption = selectedVunerableOption(event);
 
-        Laskin laskin = new Laskin(maa, trikki, tikki, tulos, tuplaus, vaara);
+        Laskin laskin = new Laskin(team, suit, contractTrick, resultTrick, resultOption, normalOption, vunerableOption);
         label.setText(laskin.toString());
+        
+        GamePoints points = new GamePoints(team, laskin.laskeYliLinjan(), laskin.laskeAlleLinjan(), laskin.laskeHavitytPisteet());
 
+    }
+
+    @FXML
+    private void addCalculatedPoints(ActionEvent event) {
+//        String team = selectedTeam(event);
+//        GamePoints points = new GamePoints(team, laskin.laskeYliLinjan(), laskin.laskeAlleLinjan(), laskin.laskeHavitytPisteet());
+    }
+
+    @FXML
+    private void handleGetBackAction(ActionEvent event) throws IOException {
+        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/AloitusSivu.fxml"));
+        Scene aloitusSivuScene = new Scene(aloitusSivuParent);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(aloitusSivuScene);
+        window.show();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lataaMaat();
-        lataaTrikit();
-        lataaTulosTikit();
+        setSuits();
+        setContractTricks();
+        setResultTricks();
 
     }
 
-    @FXML
-    public String tulosValittu(ActionEvent event) {
-        String viesti = "";
-        if (tulosAli.isSelected()) {
-            viesti += tulosAli.getText();
+    public String selectedTeam(ActionEvent event) {
+        String text = "";
+        if (ns.isSelected()) {
+            text += ns.getText();
         }
-        if (tulosYli.isSelected()) {
-            viesti += tulosYli.getText();
+        if (ew.isSelected()) {
+            text += ew.getText();
         }
-        return viesti;
+        return text;
     }
 
-    @FXML
-    public String tupalusValittu(ActionEvent event) {
-        String viesti = "";
-        if (normaali.isSelected()) {
-            viesti += normaali.getText();
+    public String selectedResult(ActionEvent event) {
+        String text = "";
+        if (over.isSelected()) {
+            text += over.getText();
         }
-        if (kahdenettu.isSelected()) {
-            viesti += kahdenettu.getText();
+        if (down.isSelected()) {
+            text += down.getText();
         }
-        if (vasta.isSelected()) {
-            viesti += vasta.getText();
-        }
-        return viesti;
+        return text;
     }
 
-    @FXML
-    public String vaaraValittu(ActionEvent event) {
-        String viesti = "";
-        if (vaarassa.isSelected()) {
-            viesti += vaarassa.getText();
+    public String selectedNormalOption(ActionEvent event) {
+        String text = "";
+        if (normal.isSelected()) {
+            text += normal.getText();
         }
-        if (vaaraton.isSelected()) {
-            viesti += vaaraton.getText();
+        if (doubled.isSelected()) {
+            text += doubled.getText();
         }
-        return viesti;
+        if (reDoubled.isSelected()) {
+            text += reDoubled.getText();
+        }
+        return text;
     }
 
-    private void lataaMaat() {
-        maat.removeAll(maat);
+    public String selectedVunerableOption(ActionEvent event) {
+        String text = "";
+        if (vulnerable.isSelected()) {
+            text += vulnerable.getText();
+        }
+        if (unVulnerable.isSelected()) {
+            text += unVulnerable.getText();
+        }
+        return text;
+    }
+
+    private void setSuits() {
+        suits.removeAll(suits);
         String a = "Pata";
         String b = "Hertta";
         String c = "Ruutu";
         String d = "Risti";
         String e = "Valtiton";
-        maat.addAll(a, b, c, d, e);
-        maaValinta.getItems().addAll(maat);
+        suits.addAll(a, b, c, d, e);
+        suitSelected.getItems().addAll(suits);
     }
 
-    private void lataaTrikit() {
-        trikit.removeAll(trikit);
+    private void setContractTricks() {
+        contractTricks.removeAll(contractTricks);
         int a = 1;
         int b = 2;
         int c = 3;
@@ -136,13 +179,13 @@ public class FXMLController implements Initializable {
         int e = 5;
         int f = 6;
         int g = 7;
-        trikit.addAll(a, b, c, d, e, f, g);
-        trikkiValinta.getItems().addAll(trikit);
+        contractTricks.addAll(a, b, c, d, e, f, g);
+        contractTrickSelected.getItems().addAll(contractTricks);
 
     }
 
-    private void lataaTulosTikit() {
-        tulosTikit.removeAll(trikit);
+    private void setResultTricks() {
+        resultTricks.removeAll(resultTricks);
         int x = 0;
         int a = 1;
         int b = 2;
@@ -151,8 +194,9 @@ public class FXMLController implements Initializable {
         int e = 5;
         int f = 6;
         int g = 7;
-        tulosTikit.addAll(x, a, b, c, d, e, f, g);
-        tulosTikki.getItems().addAll(tulosTikit);
+        resultTricks.addAll(x, a, b, c, d, e, f, g);
+        resultTrickSelected.getItems().addAll(resultTricks);
 
     }
+
 }

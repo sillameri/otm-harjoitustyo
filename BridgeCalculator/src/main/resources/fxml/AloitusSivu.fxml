@@ -11,19 +11,26 @@
 
 <AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="495.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.AloitusSivuController">
    <children>
-      <Text layoutX="201.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aloitussivu">
+      <Text layoutX="134.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bridge Pistelaskuri">
          <font>
-            <Font size="18.0" />
+            <Font size="26.0" />
          </font>
       </Text>
-      <Button fx:id="siirry" layoutX="47.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Lisää kierroksen pisteet" />
-      <Text layoutX="152.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tänne koko pelin yhteispisteet " />
+      <Button fx:id="siirry" layoutX="53.0" layoutY="541.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Lisää kierroksen pisteet" />
+      <Text layoutX="190.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pelin yhteispisteet " />
       <Text layoutX="40.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="painikkeen kautta voidaan listätä peliin yhden kierroksen pisteet" wrappingWidth="190.72802734375" />
       <Text layoutX="177.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NS" />
       <Text layoutX="293.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EW" />
       <Text layoutX="259.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pisteitä tulee pelin kulusta riippuen viivan alle ja viivan päälle, pelissä on kaksi joukkuetta (North South) ja (East West)" wrappingWidth="208.1484375" />
-      <Line endX="100.0" layoutX="247.0" layoutY="282.0" startX="-100.0" />
-      <Line endX="140.0" layoutX="247.0" layoutY="283.0" rotate="90.0" startX="-140.0" />
-      <Button layoutX="234.0" layoutY="539.0" mnemonicParsing="false" text="Poista edellisen kierroksen pisteet" />
+      <Line endX="100.0" layoutX="247.0" layoutY="282.0" startX="-100.0" strokeWidth="3.0" />
+      <Line endX="140.0" layoutX="247.0" layoutY="283.0" rotate="90.0" startX="-140.0" strokeWidth="3.0" />
+      <Label fx:id="labelONS1" layoutX="178.0" layoutY="256.0" />
+      <Label fx:id="labelOEW1" layoutX="276.0" layoutY="256.0" />
+      <Label fx:id="labelDNS1" layoutX="178.0" layoutY="292.0" />
+      <Label fx:id="labelDNS2" layoutX="178.0" layoutY="326.0" />
+      <Label fx:id="labelDEW1" layoutX="276.0" layoutY="292.0" />
+      <Label fx:id="labelDEW2" layoutX="276.0" layoutY="326.0" />
+      <Line endX="100.0" layoutX="247.0" layoutY="317.0" startX="-100.0" />
+      <Button fx:id="updatePoints" layoutX="303.0" layoutY="541.0" mnemonicParsing="false" onAction="#handelUpdatePointsAction" text="Päivitä pisteet" />
    </children>
 </AnchorPane>

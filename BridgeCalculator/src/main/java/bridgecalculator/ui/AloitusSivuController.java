@@ -5,6 +5,8 @@
  */
 package bridgecalculator.ui;
 
+import bridgecalculator.domain.GamePoints;
+import bridgecalculator.domain.Laskin;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +18,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -25,19 +29,36 @@ import javafx.stage.Stage;
  */
 public class AloitusSivuController implements Initializable {
 
+    private GamePoints gamePoints;
+    private Laskin laskin;
+
     @FXML
     private Button siirry;
+    @FXML
+    private Label labelONS1;
+    @FXML
+    private Label labelOEW1;
+    @FXML
+    private Label labelDNS1;
+    @FXML
+    private Label labelDNS2;
+    @FXML
+    private Label labelDEW1;
+    @FXML
+    private Label labelDEW2;
+    @FXML
+    private Button updatePoints;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+
+    }
 
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException{
+    private void handleButtonAction(ActionEvent event) throws IOException {
         Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         Scene aloitusSivuScene = new Scene(aloitusSivuParent);
 
@@ -45,6 +66,21 @@ public class AloitusSivuController implements Initializable {
 
         window.setScene(aloitusSivuScene);
         window.show();
+
     }
-    
+
+//    
+    @FXML
+    private void handelUpdatePointsAction(ActionEvent event) {
+        GamePoints gamePoints = new GamePoints("ns", 80, 100, 0);
+
+        
+        
+        labelONS1.setText(gamePoints.PointsNsOverLine());
+        labelOEW1.setText(gamePoints.PointsEwOverLine());
+        labelDNS1.setText(gamePoints.PointsNsUnderLine());
+        labelDEW1.setText(gamePoints.PointsEwUnderLine());
+
+    }
+
 }
