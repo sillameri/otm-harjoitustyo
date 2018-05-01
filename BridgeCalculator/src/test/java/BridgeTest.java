@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import bridgecalculator.domain.Laskin;
+import bridgecalculator.domain.RoundPoints;
 
 /**
  *
@@ -22,12 +22,12 @@ public class BridgeTest {
     public BridgeTest() {
     }
 
-    Laskin laskin;
+    RoundPoints laskin;
     GamePoints gamepoints;
 
     @Before
     public void setUp() {
-        laskin = new Laskin("ns", "Pata", 3, 2, "Yli", "Normaali", "Vaaraton");
+        laskin = new RoundPoints("ns", "Pata", 3, 2, "Yli", "Normaali", "Vaaraton");
         gamepoints = new GamePoints("ns", 30 ,40,0);
     }
 
@@ -38,12 +38,12 @@ public class BridgeTest {
 
     @Test
     public void palauttaaTrikin() {
-        assertEquals(3, laskin.getTrikki());
+        assertEquals(3, laskin.getContractTrick());
     }
 
     @Test
     public void palauttaaTikin() {
-        assertEquals(2, laskin.getTikki());
+        assertEquals(2, laskin.getResultTrick());
     }
 
     @Test
@@ -53,25 +53,19 @@ public class BridgeTest {
 
     @Test
     public void palauttaaMaakertoimen() {
-        assertEquals(30, laskin.getMaaKerroin());
+        assertEquals(30, laskin.getSuitCoefficient());
     }
 
     @Test
     public void palauttaaPisteetAlleViivan() {
-        assertEquals(90, laskin.laskeAlleLinjan());
+        assertEquals(90, laskin.countPointsUnderLine());
     }
 
     @Test
     public void palauttaaPisteetViivanPaalle() {
-        assertEquals(60, laskin.laskeYliLinjan());
+        assertEquals(60, laskin.countPointsOverLine());
     }
 
-    @Test
-    public void palauttaaHavitytPisteet() {
-        assertEquals(0, laskin.laskeHavitytPisteet());
-    }
-
-    
     
     @Test
     public void luotuGamePointOlemassa() {

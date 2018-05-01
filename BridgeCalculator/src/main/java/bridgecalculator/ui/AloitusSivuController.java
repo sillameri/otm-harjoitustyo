@@ -6,7 +6,7 @@
 package bridgecalculator.ui;
 
 import bridgecalculator.domain.GamePoints;
-import bridgecalculator.domain.Laskin;
+import bridgecalculator.domain.RoundPoints;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 public class AloitusSivuController implements Initializable {
 
     private GamePoints gamePoints;
-    private Laskin laskin;
+    private RoundPoints laskin;
 
     @FXML
     private Button siirry;
@@ -72,10 +72,9 @@ public class AloitusSivuController implements Initializable {
 //    
     @FXML
     private void handelUpdatePointsAction(ActionEvent event) {
-        GamePoints gamePoints = new GamePoints("ns", 80, 100, 0);
+        
+//        GamePoints gemePoints = new GamePoints(laskin.getTeam(), laskin.laskeYliLinjan(), laskin.laskeAlleLinjan(), laskin.laskeHavitytPisteet());
 
-        
-        
         labelONS1.setText(gamePoints.PointsNsOverLine());
         labelOEW1.setText(gamePoints.PointsEwOverLine());
         labelDNS1.setText(gamePoints.PointsNsUnderLine());

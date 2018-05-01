@@ -1,7 +1,7 @@
 package bridgecalculator.ui;
 
 import bridgecalculator.domain.GamePoints;
-import bridgecalculator.domain.Laskin;
+import bridgecalculator.domain.RoundPoints;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,6 +19,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class FXMLController implements Initializable {
@@ -26,7 +27,7 @@ public class FXMLController implements Initializable {
     ObservableList suits = FXCollections.observableArrayList();
     ObservableList contractTricks = FXCollections.observableArrayList();
     ObservableList resultTricks = FXCollections.observableArrayList();
-    private Laskin laskin;
+    private RoundPoints laskin;
     private GamePoints gamePoints;
 
     @FXML
@@ -74,23 +75,30 @@ public class FXMLController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         String team = selectedTeam(event);
         String suit = (String) suitSelected.getValue();
-        int contractTrick = (Integer) contractTrickSelected.getValue();
-        int resultTrick = (Integer) resultTrickSelected.getValue();
+        Integer contractTrick = (Integer) contractTrickSelected.getValue();
+        Integer resultTrick = (Integer) resultTrickSelected.getValue();
         String resultOption = selectedResult(event);
         String normalOption = selectedNormalOption(event);
-        String vunerableOption = selectedVunerableOption(event);
+        String vulnerableOption = selectedVunerableOption(event);
 
-        Laskin laskin = new Laskin(team, suit, contractTrick, resultTrick, resultOption, normalOption, vunerableOption);
-        label.setText(laskin.toString());
-        
-        GamePoints points = new GamePoints(team, laskin.laskeYliLinjan(), laskin.laskeAlleLinjan(), laskin.laskeHavitytPisteet());
+        if (suit == null || contractTrick == null || resultTrick == null) {
+            
+            label.setText("Täytä kaikki kentät");
+            label.setTextFill(Color.web("#f91408"));
+
+            
+        } else {
+
+            RoundPoints laskin = new RoundPoints(team, suit, contractTrick, resultTrick, resultOption, normalOption, vulnerableOption);
+            label.setText(laskin.toString());
+        }
+//        GamePoints points = new GamePoints(team, laskin.countPointsOverLineWithConditions(), laskin.countPointsUnderLine(), laskin.countLostPointsWithConditions());
 
     }
 
     @FXML
     private void addCalculatedPoints(ActionEvent event) {
-//        String team = selectedTeam(event);
-//        GamePoints points = new GamePoints(team, laskin.laskeYliLinjan(), laskin.laskeAlleLinjan(), laskin.laskeHavitytPisteet());
+
     }
 
     @FXML
