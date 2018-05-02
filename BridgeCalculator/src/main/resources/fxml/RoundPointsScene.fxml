@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="495.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="495.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.RoundPointsSceneController">
    <children>
       <RadioButton fx:id="down" layoutX="207.0" layoutY="431.0" mnemonicParsing="false" text="Ali">
          <toggleGroup>

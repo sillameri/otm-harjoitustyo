@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 
-import bridgecalculator.domain.GamePoints;
+import bridgecalculator.domain.GamePointsCalculator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import bridgecalculator.domain.RoundPoints;
+import bridgecalculator.domain.RoundPointsCalculator;
 
 /**
  *
@@ -22,13 +22,13 @@ public class BridgeTest {
     public BridgeTest() {
     }
 
-    RoundPoints laskin;
-    GamePoints gamepoints;
+    RoundPointsCalculator laskin;
+    GamePointsCalculator gamepoints;
 
     @Before
     public void setUp() {
-        laskin = new RoundPoints("ns", "Pata", 3, 2, "Yli", "Normaali", "Vaaraton");
-        gamepoints = new GamePoints("ns", 30 ,40,0);
+        laskin = new RoundPointsCalculator("ns", "Pata", 3, 2, "Yli", "Normaali", "Vaaraton");
+        gamepoints = new GamePointsCalculator("ns", 30 ,40,0);
     }
 
     @Test

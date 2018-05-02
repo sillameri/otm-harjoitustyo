@@ -1,7 +1,7 @@
 package bridgecalculator.ui;
 
-import bridgecalculator.domain.GamePoints;
-import bridgecalculator.domain.RoundPoints;
+import bridgecalculator.domain.GamePointsCalculator;
+import bridgecalculator.domain.RoundPointsCalculator;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,13 +22,13 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class FXMLController implements Initializable {
+public class RoundPointsSceneController implements Initializable {
 
     ObservableList suits = FXCollections.observableArrayList();
     ObservableList contractTricks = FXCollections.observableArrayList();
     ObservableList resultTricks = FXCollections.observableArrayList();
-    private RoundPoints laskin;
-    private GamePoints gamePoints;
+    private RoundPointsCalculator laskin;
+    private GamePointsCalculator gamePoints;
 
     @FXML
     private Label label;
@@ -82,14 +82,11 @@ public class FXMLController implements Initializable {
         String vulnerableOption = selectedVunerableOption(event);
 
         if (suit == null || contractTrick == null || resultTrick == null) {
-            
             label.setText("Täytä kaikki kentät");
-            label.setTextFill(Color.web("#f91408"));
 
-            
         } else {
 
-            RoundPoints laskin = new RoundPoints(team, suit, contractTrick, resultTrick, resultOption, normalOption, vulnerableOption);
+            RoundPointsCalculator laskin = new RoundPointsCalculator(team, suit, contractTrick, resultTrick, resultOption, normalOption, vulnerableOption);
             label.setText(laskin.toString());
         }
 //        GamePoints points = new GamePoints(team, laskin.countPointsOverLineWithConditions(), laskin.countPointsUnderLine(), laskin.countLostPointsWithConditions());
@@ -103,7 +100,7 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void handleGetBackAction(ActionEvent event) throws IOException {
-        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/AloitusSivu.fxml"));
+        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/GamePointsScene.fxml"));
         Scene aloitusSivuScene = new Scene(aloitusSivuParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

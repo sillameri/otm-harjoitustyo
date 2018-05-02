@@ -9,7 +9,7 @@ package bridgecalculator.domain;
  *
  * @author Meri
  */
-public class RoundPoints {
+public class RoundPointsCalculator {
 
     private String team;
     private String suit;
@@ -19,7 +19,7 @@ public class RoundPoints {
     private String normalOption;
     private String vulnerableOption;
 
-    public RoundPoints(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
+    public RoundPointsCalculator(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
         this.team = team;
         this.suit = suit;
         this.contractTrick = contractTrick;

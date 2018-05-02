@@ -9,14 +9,14 @@ package bridgecalculator.domain;
  *
  * @author Meri
  */
-public class GamePoints {
+public class GamePointsCalculator {
 
     private int overLine;
     private int underLine;
     private int lostPoints;
     private String team;
 
-    public GamePoints(String team, int overLine, int underLine, int lostPoints) {
+    public GamePointsCalculator(String team, int overLine, int underLine, int lostPoints) {
         this.overLine = overLine;
         this.underLine = underLine;
         this.team = team;

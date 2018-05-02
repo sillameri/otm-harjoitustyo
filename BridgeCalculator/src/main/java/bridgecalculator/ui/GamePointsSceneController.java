@@ -5,8 +5,8 @@
  */
 package bridgecalculator.ui;
 
-import bridgecalculator.domain.GamePoints;
-import bridgecalculator.domain.RoundPoints;
+import bridgecalculator.domain.GamePointsCalculator;
+import bridgecalculator.domain.RoundPointsCalculator;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,10 +27,10 @@ import javafx.stage.Stage;
  *
  * @author Meri
  */
-public class AloitusSivuController implements Initializable {
+public class GamePointsSceneController implements Initializable {
 
-    private GamePoints gamePoints;
-    private RoundPoints laskin;
+    private GamePointsCalculator gamePoints;
+    private RoundPointsCalculator laskin;
 
     @FXML
     private Button siirry;
@@ -59,7 +59,7 @@ public class AloitusSivuController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
-        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
+        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/RoundPointsScene.fxml"));
         Scene aloitusSivuScene = new Scene(aloitusSivuParent);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -73,7 +73,7 @@ public class AloitusSivuController implements Initializable {
     @FXML
     private void handelUpdatePointsAction(ActionEvent event) {
         
-//        GamePoints gemePoints = new GamePoints(laskin.getTeam(), laskin.laskeYliLinjan(), laskin.laskeAlleLinjan(), laskin.laskeHavitytPisteet());
+        GamePointsCalculator gemePoints = new GamePointsCalculator(laskin.getTeam(), laskin.countPointsOverLineWithConditions(), laskin.countPointsUnderLine(), laskin.countLostPointsWithConditions());
 
         labelONS1.setText(gamePoints.PointsNsOverLine());
         labelOEW1.setText(gamePoints.PointsEwOverLine());
