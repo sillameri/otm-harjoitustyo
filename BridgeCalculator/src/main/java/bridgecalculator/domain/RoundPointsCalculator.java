@@ -19,6 +19,7 @@ public class RoundPointsCalculator {
     private String normalOption;
     private String vulnerableOption;
 
+    
     public RoundPointsCalculator(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
         this.team = team;
         this.suit = suit;

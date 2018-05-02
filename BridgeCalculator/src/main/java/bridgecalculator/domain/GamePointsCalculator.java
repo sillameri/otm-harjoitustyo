@@ -31,6 +31,7 @@ public class GamePointsCalculator {
         return points;
     }
 
+   
     public String PointsEwUnderLine() {
         String points = " ";
         if (team.equals("ew")) {
