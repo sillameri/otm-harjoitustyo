@@ -16,6 +16,6 @@ Käyttöliittymä sisältää kaksi erilaista näkymää.
 Näkymät on muodostettu Scenebuilderin avulla ja käyttöliittymä on pyritty eristämään sovelluslogiikasta.
 
 ## Luokkakaavio
-Alla alustava luokkakaavio, jossa luokka Eränpisteet(GamePoints) ja luokka Laskin(RoundPoints). 
+Alla luokkakaavio, jossa luokka Kokonaispisteet(GamePoints) ja luokka Eränpisteet(RoundPoints). 
 
 ![kuva](https://yuml.me/442a1aa3.jpg)
