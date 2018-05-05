@@ -8,15 +8,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="495.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="bridgecalculator.ui.GamePointsSceneController">
+<AnchorPane id="AnchorPane" prefHeight="617.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bridgecalculator.ui.GamePointsSceneController">
    <children>
       <Text layoutX="134.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bridge Pistelaskuri">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Button fx:id="siirry" layoutX="53.0" layoutY="541.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Lisää kierroksen pisteet" />
+      <Button fx:id="siirry" layoutX="53.0" layoutY="541.0" mnemonicParsing="false" text="Lisää kierroksen pisteet" />
       <Text layoutX="190.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pelin yhteispisteet " />
       <Text layoutX="40.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="painikkeen kautta voidaan listätä peliin yhden kierroksen pisteet" wrappingWidth="190.72802734375" />
       <Text layoutX="177.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NS" />

@@ -1,34 +1,26 @@
 package bridgecalculator.ui;
 
-import bridgecalculator.domain.GamePointsCalculator;
 import bridgecalculator.domain.RoundPointsCalculator;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 public class RoundPointsSceneController implements Initializable {
 
     ObservableList suits = FXCollections.observableArrayList();
     ObservableList contractTricks = FXCollections.observableArrayList();
     ObservableList resultTricks = FXCollections.observableArrayList();
-    private RoundPointsCalculator laskin;
-    private GamePointsCalculator gamePoints;
+    
+    private RoundPointsCalculator roundPoints;
 
     @FXML
     private Label label;
@@ -55,8 +47,6 @@ public class RoundPointsSceneController implements Initializable {
     @FXML
     private Button calculate;
     @FXML
-    private Button addPoints;
-    @FXML
     private RadioButton ns;
     @FXML
     private RadioButton ew;
@@ -70,6 +60,14 @@ public class RoundPointsSceneController implements Initializable {
     private ToggleGroup team;
     @FXML
     private Button getBack;
+
+    public RoundPointsCalculator getRoundPointsCalculator() {
+        return roundPoints;
+    }
+
+    public Button getBackButton() {
+        return this.getBack;
+    }
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
@@ -85,28 +83,22 @@ public class RoundPointsSceneController implements Initializable {
             label.setText("Täytä kaikki kentät");
 
         } else {
-
-            RoundPointsCalculator laskin = new RoundPointsCalculator(team, suit, contractTrick, resultTrick, resultOption, normalOption, vulnerableOption);
-            label.setText(laskin.toString());
+            roundPoints = new RoundPointsCalculator(team, suit, contractTrick, resultTrick, resultOption, normalOption, vulnerableOption);
+            label.setText(roundPoints.toString());
         }
-//        GamePoints points = new GamePoints(team, laskin.countPointsOverLineWithConditions(), laskin.countPointsUnderLine(), laskin.countLostPointsWithConditions());
 
     }
 
-    @FXML
-    private void addCalculatedPoints(ActionEvent event) {
+    public void clearWindow() {
+        ns.setSelected(true);
+        normal.setSelected(true);
+        over.setSelected(true);
+        unVulnerable.setSelected(true);
+        suitSelected.setValue(null);
+        contractTrickSelected.setValue(null);
+        resultTrickSelected.setValue(null);
+        roundPoints = null;
 
-    }
-
-    @FXML
-    private void handleGetBackAction(ActionEvent event) throws IOException {
-        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/GamePointsScene.fxml"));
-        Scene aloitusSivuScene = new Scene(aloitusSivuParent);
-
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        window.setScene(aloitusSivuScene);
-        window.show();
     }
 
     @Override

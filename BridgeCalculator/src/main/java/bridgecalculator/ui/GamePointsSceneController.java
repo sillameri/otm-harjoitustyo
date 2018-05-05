@@ -6,21 +6,13 @@
 package bridgecalculator.ui;
 
 import bridgecalculator.domain.GamePointsCalculator;
-import bridgecalculator.domain.RoundPointsCalculator;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,7 +22,6 @@ import javafx.stage.Stage;
 public class GamePointsSceneController implements Initializable {
 
     private GamePointsCalculator gamePoints;
-    private RoundPointsCalculator laskin;
 
     @FXML
     private Button siirry;
@@ -57,28 +48,24 @@ public class GamePointsSceneController implements Initializable {
 
     }
 
-    @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException {
-        Parent aloitusSivuParent = FXMLLoader.load(getClass().getResource("/fxml/RoundPointsScene.fxml"));
-        Scene aloitusSivuScene = new Scene(aloitusSivuParent);
-
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        window.setScene(aloitusSivuScene);
-        window.show();
-
+    public void setGamePointsCalculator(GamePointsCalculator gamePoints) {
+        this.gamePoints = gamePoints;
     }
 
-//    
+    public Button getBackButton() {
+        return this.siirry;
+    }
+
     @FXML
     private void handelUpdatePointsAction(ActionEvent event) {
-        
-        GamePointsCalculator gemePoints = new GamePointsCalculator(laskin.getTeam(), laskin.countPointsOverLineWithConditions(), laskin.countPointsUnderLine(), laskin.countLostPointsWithConditions());
-
-        labelONS1.setText(gamePoints.PointsNsOverLine());
-        labelOEW1.setText(gamePoints.PointsEwOverLine());
-        labelDNS1.setText(gamePoints.PointsNsUnderLine());
-        labelDEW1.setText(gamePoints.PointsEwUnderLine());
+        gamePoints.updateSumNsPoints();
+        gamePoints.updateSumEwPoints();
+        labelONS1.setText(gamePoints.getOverLineNs());
+        labelOEW1.setText(gamePoints.getOverLineEw());
+        labelDNS1.setText(gamePoints.getUnderLineNs());
+        labelDEW1.setText(gamePoints.getUnderLineEw());
+        labelDNS2.setText(gamePoints.getUnderLineNs2());
+        labelDEW2.setText(gamePoints.getUnderLineEw2());
 
     }
 

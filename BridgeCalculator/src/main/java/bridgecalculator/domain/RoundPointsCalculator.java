@@ -18,6 +18,7 @@ public class RoundPointsCalculator {
     private String resultOption;
     private String normalOption;
     private String vulnerableOption;
+    private int u;
 
     
     public RoundPointsCalculator(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
@@ -28,9 +29,23 @@ public class RoundPointsCalculator {
         this.resultOption = resultOption;
         this.normalOption = normalOption;
         this.vulnerableOption = vulnerableOption;
-
+        this.u = 0;
     }
 
+    
+     public void update(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
+        this.team = team;
+        this.suit = suit;
+        this.contractTrick = contractTrick;
+        this.resultTrick = resultTrick;
+        this.resultOption = resultOption;
+        this.normalOption = normalOption;
+        this.vulnerableOption = vulnerableOption;
+        this.u = countPointsUnderLine();
+    }
+     
+     
+     
     public int getContractTrick() {
         return this.contractTrick;
     }
@@ -50,6 +65,8 @@ public class RoundPointsCalculator {
     public String getVulnerable() {
         return this.vulnerableOption;
     }
+    
+    
 
     public int getSuitCoefficient() {
         int coefficient = 0;
@@ -208,6 +225,8 @@ public class RoundPointsCalculator {
         return points;
     }
 
+    
+    
     @Override
     public String toString() {
         return "Tarjous: " + contractTrick + " " + suit + " joukkue: " + team + ". Tulos: " + resultTrick + " " + resultOption + "\n"
@@ -215,6 +234,10 @@ public class RoundPointsCalculator {
                 + "Voitetut pisteet linjan päälle: " + countPointsOverLineWithConditions() + "\n"
                 + "Hävityt pisteet: " + countLostPointsWithConditions();
 
+    }
+    
+    public int getUnderline(){
+        return u;
     }
 
 }
