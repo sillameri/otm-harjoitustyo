@@ -12,4 +12,6 @@
 | 17.4          | 3            |checkstyle ja testien lisääminen            |
 | 20.4          | 3           |ohjelman laajentaminen          |
 | 22.4          | 4            |ohjelman laajentaminen ja testien lisääminen            |
-| tunteja yhteensä | 23             |           |
+| 1.5          | 2           |laskin valmis          |
+| 2.5          | 5            |nimeämistä, daon suunnittelua ja testit             |
+| tunteja yhteensä | 30             |           |
