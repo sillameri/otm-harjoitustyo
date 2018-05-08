@@ -30,6 +30,7 @@ Joukkue joka saa ensimmäisenä viivan alle 100 pistettä on "vaarassa" kunnes t
 
 Sovellus aukee näkymään, jossa näkyy pelin kokonaispisteet.
 
+![Kuva1](/otm-harjoitustyo/dokumentointi/kuvat/Kokonaispisteet1.png)
 
 Painamalla nappulaa *Lopeta peli* sovellus sulkeuttuu.   
 Nappulan *Aloita uusi peli* kautta voi aloittaa pelin uudelleen.  
