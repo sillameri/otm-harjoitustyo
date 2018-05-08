@@ -17,51 +17,80 @@ public class GamePointsCalculator {
     private int overLineEw;
     private int underLineNs;
     private int underLineEw;
-    private int underLineNs2;
-    private int underLineEw2;
-    private boolean round2;
+    private int winNs;
+    private int winEw;
 
     private String team;
     private ArrayList<RoundPointsCalculator> list;
+    private int currentGame;
 
     public GamePointsCalculator() {
         this.list = new ArrayList<>();
-        round2 = false;
+    }
+
+    public int getTotalPoints(String team) {
+        int sum = 0;
+
+        for (RoundPointsCalculator rpc : list) {
+            this.team = rpc.getTeam().toLowerCase();
+            if (this.team.equals(team)) {
+                sum += rpc.countPointsOverLineWithConditions();
+                sum += rpc.countPointsUnderLine();
+                sum += rpc.countLostPointsWithConditions();
+            }
+
+        }
+        int bonus = 0;
+        if (team.equals("ns")) {
+            if (getWinNs() == 2) {
+                if (getWinEw() == 1) {
+                    bonus = 500;
+                } else {
+                    bonus = 700;
+                }
+            }
+        } else if (getWinEw() == 2) {
+            if (getWinNs() == 1) {
+                bonus = 500;
+            } else {
+                bonus = 700;
+            }
+        }
+        sum += bonus;
+
+        return sum;
     }
 
     public void updateSumNsPoints() {
         this.overLineNs = 0;
         this.underLineNs = 0;
-        this.underLineNs2 = 0;
+
         for (RoundPointsCalculator rpc : list) {
             this.team = rpc.getTeam().toLowerCase();
             if (team.equals("ns")) {
                 this.overLineNs += rpc.countPointsOverLineWithConditions();
-                if (this.underLineNs >= 100 || round2 == true) {
-                    round2 = true;
-                    this.underLineNs2 += rpc.countPointsUnderLine();
-                } else {
+                if (currentGame == rpc.getGame()) {
                     this.underLineNs += rpc.countPointsUnderLine();
                 }
             }
             if (team.equals("ew")) {
                 this.overLineNs += rpc.countLostPointsWithConditions();
             }
+
+        }
+        if (underLineNs >= 100) {
+            winNs++;
         }
     }
 
     public void updateSumEwPoints() {
         this.overLineEw = 0;
         this.underLineEw = 0;
-        this.underLineEw2 = 0;
         for (RoundPointsCalculator rpc : list) {
             this.team = rpc.getTeam().toLowerCase();
             if (team.equals("ew")) {
                 this.overLineEw += rpc.countPointsOverLineWithConditions();
-                if (this.underLineEw >= 100 || round2 == true) {
-                    round2 = true;
-                    this.underLineEw2 += rpc.countPointsUnderLine();
-                } else {
+                if (currentGame == rpc.getGame()) {
                     this.underLineEw += rpc.countPointsUnderLine();
                 }
             }
@@ -69,39 +98,35 @@ public class GamePointsCalculator {
                 this.overLineEw += rpc.countLostPointsWithConditions();
             }
         }
+        if (underLineEw >= 100) {
+            winEw++;
+        }
+    }
+
+    public int getWinNs() {
+        return this.winNs;
+    }
+
+    public int getWinEw() {
+        return this.winEw;
     }
 
     public void addrpc(RoundPointsCalculator roundPointsCalculator) {
+        roundPointsCalculator.setGame(currentGame);
         list.add(roundPointsCalculator);
 
     }
 
-    public String getUnderLineNs() {
-        if (underLineNs == 0) {
-            return "";
-        }
-        return String.valueOf(underLineNs);
+    public void setCurrentGame(int currentGame) {
+        this.currentGame = currentGame;
     }
 
-    public String getUnderLineEw() {
-        if (underLineEw == 0) {
-            return "";
-        }
-        return String.valueOf(underLineEw);
+    public int getUnderLineNs() {
+        return underLineNs;
     }
 
-    public String getUnderLineNs2() {
-        if (underLineNs2 == 0) {
-            return "";
-        }
-        return String.valueOf(underLineNs2);
-    }
-
-    public String getUnderLineEw2() {
-        if (underLineEw2 == 0) {
-            return "";
-        }
-        return String.valueOf(underLineEw2);
+    public int getUnderLineEw() {
+        return underLineEw;
     }
 
     public String getOverLineNs() {

@@ -15,21 +15,17 @@
             <Font size="26.0" />
          </font>
       </Text>
-      <Button fx:id="siirry" layoutX="53.0" layoutY="541.0" mnemonicParsing="false" text="Lisää kierroksen pisteet" />
+      <Button fx:id="siirry" layoutX="165.0" layoutY="515.0" mnemonicParsing="false" text="Lisää kierroksen pisteet" />
       <Text layoutX="190.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pelin yhteispisteet " />
-      <Text layoutX="40.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="painikkeen kautta voidaan listätä peliin yhden kierroksen pisteet" wrappingWidth="190.72802734375" />
-      <Text layoutX="177.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NS" />
-      <Text layoutX="293.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EW" />
-      <Text layoutX="259.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="pisteitä tulee pelin kulusta riippuen viivan alle ja viivan päälle, pelissä on kaksi joukkuetta (North South) ja (East West)" wrappingWidth="208.1484375" />
-      <Line endX="100.0" layoutX="247.0" layoutY="282.0" startX="-100.0" strokeWidth="3.0" />
-      <Line endX="140.0" layoutX="247.0" layoutY="283.0" rotate="90.0" startX="-140.0" strokeWidth="3.0" />
-      <Label fx:id="labelONS1" layoutX="178.0" layoutY="256.0" />
-      <Label fx:id="labelOEW1" layoutX="276.0" layoutY="256.0" />
-      <Label fx:id="labelDNS1" layoutX="178.0" layoutY="292.0" />
-      <Label fx:id="labelDNS2" layoutX="178.0" layoutY="326.0" />
-      <Label fx:id="labelDEW1" layoutX="276.0" layoutY="292.0" />
-      <Label fx:id="labelDEW2" layoutX="276.0" layoutY="326.0" />
-      <Line endX="100.0" layoutX="247.0" layoutY="317.0" startX="-100.0" />
-      <Button fx:id="updatePoints" layoutX="303.0" layoutY="541.0" mnemonicParsing="false" onAction="#handelUpdatePointsAction" text="Päivitä pisteet" />
+      <Text layoutX="178.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NS" />
+      <Text layoutX="293.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EW" />
+      <VBox fx:id="vbox" layoutX="154.0" layoutY="157.0" prefHeight="304.0" prefWidth="188.0" />
+      <Button fx:id="exit" layoutX="24.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleExitAction" text="Lopeta peli" />
+      <Button fx:id="restart" layoutX="124.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleRestartAction" text="Aloita uusi peli" />
+      <Button fx:id="highscore" layoutX="247.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleHighscoreAction" text="Huipputulokset" />
+      <Button fx:id="save" layoutX="376.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSaveAction" text="Tallenna tulos" />
+      <Label fx:id="totalPointsNs" layoutX="50.0" layoutY="292.0" />
+      <Label fx:id="totalPointsEw" layoutX="386.0" layoutY="292.0" />
+      <Label fx:id="infoLabel" layoutX="215.0" layoutY="474.0" />
    </children>
 </AnchorPane>

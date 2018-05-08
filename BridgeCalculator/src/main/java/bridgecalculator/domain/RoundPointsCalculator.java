@@ -19,6 +19,7 @@ public class RoundPointsCalculator {
     private String normalOption;
     private String vulnerableOption;
     private int u;
+    private int game;
 
     
     public RoundPointsCalculator(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
@@ -44,7 +45,13 @@ public class RoundPointsCalculator {
         this.u = countPointsUnderLine();
     }
      
-     
+    public int getGame(){
+        return this.game;
+    } 
+    
+    public void setGame(int game){
+        this.game = game;
+    }
      
     public int getContractTrick() {
         return this.contractTrick;

@@ -1,6 +1,7 @@
 package bridgecalculator.ui;
 
 import bridgecalculator.domain.GamePointsCalculator;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,8 +18,12 @@ public class MainApp extends Application {
     @Override
     public void start(final Stage stage) throws Exception {
 
-        gamePoints = new GamePointsCalculator();
+        startGame(stage);
+    }
 
+    private void startGame(final Stage stage) throws IOException {
+        gamePoints = new GamePointsCalculator();
+        
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(getClass().getResource("/fxml/RoundPointsScene.fxml"));
         final Parent mainLayout2 = loader2.load();
@@ -27,7 +32,7 @@ public class MainApp extends Application {
         FXMLLoader loader1 = new FXMLLoader();
         loader1.setLocation(getClass().getResource("/fxml/GamePointsScene.fxml"));
         final Parent mainLayout1 = loader1.load();
-        GamePointsSceneController gpsc = loader1.getController();
+        final GamePointsSceneController gpsc = loader1.getController();
         gpsc.setGamePointsCalculator(gamePoints);
 
         gpsc.getBackButton().setOnAction(new EventHandler<ActionEvent>() {
@@ -44,9 +49,19 @@ public class MainApp extends Application {
                 stage.getScene().setRoot(mainLayout1);
                 if (rpsc.getRoundPointsCalculator() != null) {
                     gamePoints.addrpc(rpsc.getRoundPointsCalculator());
+                    gpsc.updatePoints();
                 }
 
             }
+        });
+        
+        gpsc.getEndGameButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                stage.close();
+                
+            }
+        
         });
 
         Scene scene = new Scene(mainLayout1);
@@ -54,6 +69,11 @@ public class MainApp extends Application {
         stage.setTitle("Bridge Calculator");
         stage.setScene(scene);
         stage.show();
+    }
+    
+    public void restart(Stage stage) throws IOException{
+        startGame(stage);
+        
     }
 
     /**
