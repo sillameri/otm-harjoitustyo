@@ -3,9 +3,9 @@
 
 | Päiväys       | Aika (h)      | Mitä tein |
 | ------------- |:-------------:| -----------------------------:|
-| 19.3          | 1             |määrittelydokumentti           |
-| 28.3          | 2             |oman ohjelman aloitus ja javaFX Scene builder:iin tutustuminen          |
-| 8.4          | 2             |ohjelman uudelleen aloitus ja interfacein tekoa ja scene builderiin opettelua           |
+| 19.3          | 1             |määrittelydokumentti           
+| 28.3          | 2             |oman ohjelman aloitus ja javaFX Scene builder:iin tutustuminen          
+| 8.4          | 2             |ohjelman uudelleen aloitus ja interfacein tekoa ja scene builderiin opettelua           
 | 9.4          | 1,5             |testien luomista ja jacocon toimintaan saanti           |
 | 10.4          | 1,5             |toiminnallisuuksien luominen ohjelmaan            |
 | 16.4          | 5            |ohjelman laajentaminen ja toisen näkymän luominen           |
@@ -16,5 +16,5 @@
 | 2.5          | 5            |nimeämistä, daon suunnittelua ja testit             |
 | to.4          |  6          |ohjelman laajentaminen            |
 | ma.5          | 5           |kokonaispisteitä laskeva laskin valmis          |
-| 8.5          | 2            |dokumentointia             |
+| 8.5          | 4            |dokumentointia             |
 | tunteja yhteensä | 43             |           |
