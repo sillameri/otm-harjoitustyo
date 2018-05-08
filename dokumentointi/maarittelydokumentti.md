@@ -25,9 +25,9 @@ Sovellus koostuu kolmesta näkymästä. Sovellus aukeaa päänäkymään, joka l
 
 ### Laske erän pisteet näkymässä käyttäjä voi:
 - palata takaisin päänäkymään      
-- laskea pisteitä syöttämällä seuraavat tiedot.   
+- laskea pisteitä syöttämällä seuraavat tiedot.    
 
-  &nbsp; - Tarjouskierroksen voittanut joukkue    
+&nbsp; - Tarjouskierroksen voittanut joukkue    
   &nbsp;&nbsp;&nbsp; NS tai EW
 
 &nbsp; - Lopullinen tarjous  
