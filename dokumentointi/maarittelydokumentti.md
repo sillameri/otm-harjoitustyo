@@ -24,23 +24,24 @@ Sovellus koostuu kolmesta näkymästä. Sovellus aukeaa päänäkymään, joka l
 - Tallentaa päättyneen peli pisteet
 
 ### Laske erän pisteet näkymässä käyttäjä voi:
--palata takaisin päänäkymään   
--laskea pisteitä syöttämällä seuraavat tiedot.
-&nbsp -Tarjouskierroksen voittanut joukkue
-&nbsp;&nbsp;&nbsp; NS tai EW
+-palata takaisin päänäkymään      
+-laskea pisteitä syöttämällä seuraavat tiedot.   
 
-&nbsp -Lopullinen tarjous  
+  &nbsp; -Tarjouskierroksen voittanut joukkue
+  &nbsp;&nbsp;&nbsp; NS tai EW
+
+&nbsp; -Lopullinen tarjous  
   &nbsp;&nbsp;&nbsp; trikkien määrä (1-7)  
   &nbsp;&nbsp;&nbsp; valttimaa (valtiton,pata,hertta,ruutu,risti)  
   
-&nbsp -Tarjous vaihtoehdot  
+&nbsp; -Tarjous vaihtoehdot  
   &nbsp;&nbsp;&nbsp; normaali  
   &nbsp;&nbsp;&nbsp; kahdennus  
   &nbsp;&nbsp;&nbsp; vastakahdennus  
   &nbsp;&nbsp;&nbsp; vaarassa  
   &nbsp;&nbsp;&nbsp; vaaraton  
   
-&nbsp -Tulos   
+&nbsp; -Tulos   
   &nbsp;&nbsp;&nbsp; tikkien määrä (1-7)  
   &nbsp;&nbsp;&nbsp; yli  
   &nbsp;&nbsp;&nbsp; ali  
