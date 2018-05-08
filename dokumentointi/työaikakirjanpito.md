@@ -17,4 +17,4 @@
 | to.4          |  6          |ohjelman laajentaminen            |
 | ma.5          | 5           |kokonaispisteitä laskeva laskin valmis          |
 | 8.5          | 4            |dokumentointia             |
-| tunteja yhteensä | 43             |           |
+| tunteja yhteensä | 45             |           |
