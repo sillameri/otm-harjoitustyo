@@ -14,16 +14,18 @@ import javafx.event.EventHandler;
 public class MainApp extends Application {
 
     private GamePointsCalculator gamePoints;
+//    private FileBridgeCalculatorDao fileDao;
 
     @Override
     public void start(final Stage stage) throws Exception {
+        
 
         startGame(stage);
     }
 
     private void startGame(final Stage stage) throws IOException {
         gamePoints = new GamePointsCalculator();
-        
+
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(getClass().getResource("/fxml/RoundPointsScene.fxml"));
         final Parent mainLayout2 = loader2.load();
@@ -54,14 +56,14 @@ public class MainApp extends Application {
 
             }
         });
-        
+
         gpsc.getEndGameButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 stage.close();
-                
+
             }
-        
+
         });
 
         Scene scene = new Scene(mainLayout1);
@@ -70,10 +72,10 @@ public class MainApp extends Application {
         stage.setScene(scene);
         stage.show();
     }
-    
-    public void restart(Stage stage) throws IOException{
+
+    public void restart(Stage stage) throws IOException {
         startGame(stage);
-        
+
     }
 
     /**

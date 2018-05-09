@@ -19,6 +19,7 @@ public class GamePointsCalculator {
     private int underLineEw;
     private int winNs;
     private int winEw;
+    private boolean isGameGoing = false;
 
     private String team;
     private ArrayList<RoundPointsCalculator> list;
@@ -28,14 +29,49 @@ public class GamePointsCalculator {
         this.list = new ArrayList<>();
     }
 
-    public int getTotalPoints(String team) {
+//    public int getTotalPoints(String team) {
+//        int sum = 0;
+//
+//        for (RoundPointsCalculator rpc : list) {
+//            this.team = rpc.getTeam().toLowerCase();
+//            if (this.team.equals(team)) {
+//                sum += rpc.countPointsOverLineWithConditions();
+//                sum += rpc.countPointsUnderLine();
+//                sum += rpc.countLostPointsWithConditions();
+//            }
+//
+//        }
+//        int bonus = 0;
+//        if (team.equals("ns")) {
+//            if (getWinNs() == 2) {
+//                if (getWinEw() == 1) {
+//                    bonus = 500;
+//                } else {
+//                    bonus = 700;
+//                }
+//            }
+//        } else if (getWinEw() == 2) {
+//            if (getWinNs() == 1) {
+//                bonus = 500;
+//            } else {
+//                bonus = 700;
+//            }
+//        }
+//        sum += bonus;
+//
+//        return sum;
+//    }
+    
+     public int getTotalPoints(String team1, String team2) {
         int sum = 0;
 
         for (RoundPointsCalculator rpc : list) {
             this.team = rpc.getTeam().toLowerCase();
-            if (this.team.equals(team)) {
+            if (this.team.equals(team1)) {
                 sum += rpc.countPointsOverLineWithConditions();
                 sum += rpc.countPointsUnderLine();
+                
+            }if(this.team.equals(team2)){
                 sum += rpc.countLostPointsWithConditions();
             }
 
@@ -43,6 +79,7 @@ public class GamePointsCalculator {
         int bonus = 0;
         if (team.equals("ns")) {
             if (getWinNs() == 2) {
+                isGameGoing = false;
                 if (getWinEw() == 1) {
                     bonus = 500;
                 } else {
@@ -50,6 +87,7 @@ public class GamePointsCalculator {
                 }
             }
         } else if (getWinEw() == 2) {
+            isGameGoing = false;
             if (getWinNs() == 1) {
                 bonus = 500;
             } else {
@@ -109,6 +147,10 @@ public class GamePointsCalculator {
 
     public int getWinEw() {
         return this.winEw;
+    }
+    
+    public boolean GameGoing(){
+        return this.isGameGoing;
     }
 
     public void addrpc(RoundPointsCalculator roundPointsCalculator) {

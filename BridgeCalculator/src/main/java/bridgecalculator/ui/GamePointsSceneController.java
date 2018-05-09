@@ -5,13 +5,16 @@
  */
 package bridgecalculator.ui;
 
+import bridgecalculator.dao.FileBridgeCalculatorDao;
 import bridgecalculator.domain.GamePointsCalculator;
+import bridgecalculator.domain.Winner;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,9 +40,9 @@ import javafx.stage.Stage;
 public class GamePointsSceneController implements Initializable {
 
     private GamePointsCalculator gamePoints;
+    private FileBridgeCalculatorDao fileDao;
+    private Winner winner;
 
-    @FXML
-    private Button siirry;
     @FXML
     private VBox vbox;
     private VBox overLineVBox;
@@ -62,6 +65,8 @@ public class GamePointsSceneController implements Initializable {
     private Label totalPointsEw;
     @FXML
     private Label infoLabel;
+    @FXML
+    private Button moveToRoundPoints;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,6 +77,8 @@ public class GamePointsSceneController implements Initializable {
         underLineVBox = createUnderLine();
         vbox.getChildren().add(underLineVBox);
 
+        save.setDisable(false);
+
     }
 
     public void setGamePointsCalculator(GamePointsCalculator gamePoints) {
@@ -79,10 +86,10 @@ public class GamePointsSceneController implements Initializable {
     }
 
     public Button getBackButton() {
-        return this.siirry;
+        return this.moveToRoundPoints;
     }
-    
-    public Button getEndGameButton(){
+
+    public Button getEndGameButton() {
         return this.exit;
     }
 
@@ -93,9 +100,9 @@ public class GamePointsSceneController implements Initializable {
         addItemOverLine();
         addItemUnderLine();
 
-        totalPointsNs.setText("" + gamePoints.getTotalPoints("ns"));
-        totalPointsEw.setText("" + gamePoints.getTotalPoints("ew"));
-       
+        totalPointsNs.setText("" + gamePoints.getTotalPoints("ns", "ew"));
+        totalPointsEw.setText("" + gamePoints.getTotalPoints("ew", "ns"));
+
         if (gamePoints.getUnderLineEw() >= 100 || gamePoints.getUnderLineNs() >= 100) {
 
             underLineVBox = createUnderLine();
@@ -103,17 +110,21 @@ public class GamePointsSceneController implements Initializable {
         }
     }
 
-    private void winnerPopUp(String winner, int pointsNs, int pointsEw) {
+    private void highScorePopUp() {
         try {
             Stage dialog = new Stage();
             dialog.initModality(Modality.APPLICATION_MODAL);
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/EndGameScene.fxml"));
+            loader.setLocation(getClass().getResource("/fxml/HighScoreScene.fxml"));
             final Parent mainLayout = loader.load();
-            final EndGameSceneController controller = loader.getController();
-            controller.setWinner(winner);
-            controller.setPointsNs(pointsNs);
-            controller.setPointsEw(pointsEw);
+            final HighScoreSceneController controller = loader.getController();
+
+            controller.getCloseGameButton().setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    dialog.close();
+                }
+            });
 
             Scene scene = new Scene(mainLayout);
             scene.getStylesheets().add("/styles/Styles.css");
@@ -176,9 +187,6 @@ public class GamePointsSceneController implements Initializable {
         return underLineBox;
     }
 
-    @FXML
-    private void handleExitAction(ActionEvent event) {
-    }
 
     @FXML
     private void handleRestartAction(ActionEvent event) {
@@ -186,11 +194,18 @@ public class GamePointsSceneController implements Initializable {
 
     @FXML
     private void handleHighscoreAction(ActionEvent event) {
-        winnerPopUp("ns", 0, 0);
+        highScorePopUp();
     }
 
     @FXML
-    private void handleSaveAction(ActionEvent event) {
+    private void handleSaveAction(ActionEvent event) throws Exception {
+
+        winner = new Winner(gamePoints.getTotalPoints("ns", "ew"), gamePoints.getTotalPoints("ew", "ns"));
+        winner.setWinnerAndLoserPoints();
+        fileDao = new FileBridgeCalculatorDao("data.txt", winner);
+
+        fileDao.save();
+
     }
 
 }
