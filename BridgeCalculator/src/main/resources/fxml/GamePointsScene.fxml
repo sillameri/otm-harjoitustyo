@@ -15,12 +15,12 @@
             <Font size="26.0" />
          </font>
       </Text>
-      <Button fx:id="siirry" layoutX="165.0" layoutY="515.0" mnemonicParsing="false" text="Lisää kierroksen pisteet" />
+      <Button fx:id="moveToRoundPoints" layoutX="165.0" layoutY="515.0" mnemonicParsing="false" text="Lisää kierroksen pisteet" />
       <Text layoutX="190.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pelin yhteispisteet " />
       <Text layoutX="178.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NS" />
       <Text layoutX="293.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EW" />
       <VBox fx:id="vbox" layoutX="154.0" layoutY="157.0" prefHeight="304.0" prefWidth="188.0" />
-      <Button fx:id="exit" layoutX="24.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleExitAction" text="Lopeta peli" />
+      <Button fx:id="exit" layoutX="24.0" layoutY="555.0" mnemonicParsing="false" text="Lopeta peli" />
       <Button fx:id="restart" layoutX="124.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleRestartAction" text="Aloita uusi peli" />
       <Button fx:id="highscore" layoutX="247.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleHighscoreAction" text="Huipputulokset" />
       <Button fx:id="save" layoutX="376.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSaveAction" text="Tallenna tulos" />
