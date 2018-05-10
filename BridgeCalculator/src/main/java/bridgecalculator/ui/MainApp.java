@@ -12,15 +12,14 @@ import javafx.stage.Stage;
 import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import static javafx.application.Application.launch;
 
 public class MainApp extends Application {
 
     private GamePointsCalculator gamePoints;
-//    private FileBridgeCalculatorDao fileDao;
 
     @Override
     public void start(final Stage stage) throws Exception {
-
         startGame(stage);
     }
 

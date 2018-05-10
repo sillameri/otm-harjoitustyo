@@ -14,6 +14,7 @@
             <Font size="24.0" />
          </font></Text>
       <Button fx:id="closeButton" layoutX="178.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Sulje" />
-      <Label fx:id="highScoreLabel" layoutX="107.0" layoutY="98.0" prefHeight="181.0" prefWidth="200.0" />
+      <Label fx:id="highScoreLabel" layoutX="82.0" layoutY="123.0" prefHeight="181.0" prefWidth="240.0" />
+      <Text layoutX="55.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voittaja ja voitetut pisteet (hävinneiden pisteet)" />
    </children>
 </AnchorPane>

@@ -21,20 +21,18 @@ public class Winner {
         this.totalPointsEw = totalPointsEw;
         this.totalPointsNs = totalPointsNs;
     }
-    
-   
-    public Winner(String team, int points, int loserPoints){
+
+    public Winner(String team, int points, int loserPoints) {
         this.team = team;
         this.winnerPoints = points;
         this.loserPoints = loserPoints;
     }
-    
-    
-    public int getPoints(){
+
+    public int getPoints() {
         return this.winnerPoints;
     }
-    
-    public int getLoserPoints(){
+
+    public int getLoserPoints() {
         return this.loserPoints;
     }
 
@@ -58,13 +56,10 @@ public class Winner {
         }
 
     }
-    
-    
 
     @Override
     public String toString() {
-        return getWinner() + ":" + this.winnerPoints + ":" + this.loserPoints +"\n";
+        return getWinner() + ":" + this.winnerPoints + ":" + this.loserPoints + "\n";
     }
 
-    
 }

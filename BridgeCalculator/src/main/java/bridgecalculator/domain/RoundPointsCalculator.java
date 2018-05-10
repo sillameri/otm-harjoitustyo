@@ -21,7 +21,6 @@ public class RoundPointsCalculator {
     private int u;
     private int game;
 
-    
     public RoundPointsCalculator(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
         this.team = team;
         this.suit = suit;
@@ -33,8 +32,7 @@ public class RoundPointsCalculator {
         this.u = 0;
     }
 
-    
-     public void update(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
+    public void update(String team, String suit, int contractTrick, int resultTrick, String resultOption, String normalOption, String vulnerableOption) {
         this.team = team;
         this.suit = suit;
         this.contractTrick = contractTrick;
@@ -44,15 +42,15 @@ public class RoundPointsCalculator {
         this.vulnerableOption = vulnerableOption;
         this.u = countPointsUnderLine();
     }
-     
-    public int getGame(){
+
+    public int getGame() {
         return this.game;
-    } 
-    
-    public void setGame(int game){
+    }
+
+    public void setGame(int game) {
         this.game = game;
     }
-     
+
     public int getContractTrick() {
         return this.contractTrick;
     }
@@ -72,8 +70,6 @@ public class RoundPointsCalculator {
     public String getVulnerable() {
         return this.vulnerableOption;
     }
-    
-    
 
     public int getSuitCoefficient() {
         int coefficient = 0;
@@ -232,8 +228,6 @@ public class RoundPointsCalculator {
         return points;
     }
 
-    
-    
     @Override
     public String toString() {
         return "Tarjous: " + contractTrick + " " + suit + " joukkue: " + team + ". Tulos: " + resultTrick + " " + resultOption + "\n"
@@ -242,8 +236,8 @@ public class RoundPointsCalculator {
                 + "Hävityt pisteet: " + countLostPointsWithConditions();
 
     }
-    
-    public int getUnderline(){
+
+    public int getUnderline() {
         return u;
     }
 

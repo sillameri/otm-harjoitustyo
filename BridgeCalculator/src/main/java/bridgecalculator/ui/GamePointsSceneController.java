@@ -27,7 +27,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Separator;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -91,8 +90,8 @@ public class GamePointsSceneController implements Initializable {
     public Button getEndGameButton() {
         return this.exit;
     }
-    
-    public Button getReStartButton(){
+
+    public Button getReStartButton() {
         return this.restart;
     }
 
@@ -107,7 +106,7 @@ public class GamePointsSceneController implements Initializable {
         totalPointsNs.setText("" + gamePoints.getTotalPoints("ns", "ew"));
         totalPointsEw.setText("" + gamePoints.getTotalPoints("ew", "ns"));
 
-        if (gamePoints.getUnderLineEw() >= 100 || gamePoints.getUnderLineNs() >= 100) {
+        if (gamePoints.getUnderLine("ew") >= 100 || gamePoints.getUnderLine("ns") >= 100) {
 
             underLineVBox = createUnderLine();
             gamePoints.setCurrentGame(++game);
@@ -116,55 +115,27 @@ public class GamePointsSceneController implements Initializable {
     }
 
     public void updateGame() {
-        save.setDisable(gamePoints.GameGoing());
-        moveToRoundPoints.setDisable(!gamePoints.GameGoing());
+        save.setDisable(gamePoints.gameGoing());
+        moveToRoundPoints.setDisable(!gamePoints.gameGoing());
 
-        if (gamePoints.GameGoing() == false) {
+        if (gamePoints.gameGoing() == false) {
             infoLabel.setText("Peli loppui!");
         }
     }
 
-    private void highScorePopUp() {
-        try {
-            Stage dialog = new Stage();
-            dialog.initModality(Modality.APPLICATION_MODAL);
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/fxml/HighScoreScene.fxml"));
-            final Parent mainLayout = loader.load();
-            final HighScoreSceneController controller = loader.getController();
-
-            controller.getCloseGameButton().setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    dialog.close();
-                }
-            });
-
-            Scene scene = new Scene(mainLayout);
-            scene.getStylesheets().add("/styles/Styles.css");
-            dialog.setTitle("Bridge Calculator");
-            dialog.setScene(scene);
-            dialog.show();
-        } catch (IOException ex) {
-            Logger.getLogger(GamePointsSceneController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+   
 
     private void addItemOverLine() {
         HBox overLineItem = new HBox();
-        overLineItem.setSpacing(50);
+        overLineItem.setSpacing(60);
 
-        Label nsLabel = new Label(gamePoints.getOverLineNs());
-        Label ewLabel = new Label(gamePoints.getOverLineEw());
+        Label nsLabel = new Label(gamePoints.getOverLine("ns"));
+        Label ewLabel = new Label(gamePoints.getOverLine("ew"));
 
         Separator sep = new Separator();
         sep.setOrientation(Orientation.VERTICAL);
 
         overLineItem.getChildren().addAll(nsLabel, sep, ewLabel);
-
-        HBox.setHgrow(nsLabel, Priority.ALWAYS);
-        HBox.setHgrow(ewLabel, Priority.ALWAYS);
-        HBox.setHgrow(sep, Priority.ALWAYS);
 
         overLineVBox.getChildren().add(0, overLineItem);
         nOverLine++;
@@ -172,10 +143,10 @@ public class GamePointsSceneController implements Initializable {
 
     private void addItemUnderLine() {
         HBox underLineItem = new HBox();
-        underLineItem.setSpacing(50);
-
-        Label nsLabel = new Label("" + gamePoints.getUnderLineNs());
-        Label ewLabel = new Label("" + gamePoints.getUnderLineEw());
+        underLineItem.setSpacing(60);
+        
+        Label nsLabel = new Label(gamePoints.getUnderLineString("ns"));
+        Label ewLabel = new Label(gamePoints.getUnderLineString("ew"));
 
         Separator sep = new Separator();
         sep.setOrientation(Orientation.VERTICAL);
@@ -207,7 +178,29 @@ public class GamePointsSceneController implements Initializable {
 
     @FXML
     private void handleHighscoreAction(ActionEvent event) {
-        highScorePopUp();
+        try {
+            Stage dialog = new Stage();
+            dialog.initModality(Modality.APPLICATION_MODAL);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/fxml/HighScoreScene.fxml"));
+            final Parent mainLayout = loader.load();
+            final HighScoreSceneController controller = loader.getController();
+
+            controller.getCloseGameButton().setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    dialog.close();
+                }
+            });
+
+            Scene scene = new Scene(mainLayout);
+            scene.getStylesheets().add("/styles/Styles.css");
+            dialog.setTitle("Bridge Calculator");
+            dialog.setScene(scene);
+            dialog.show();
+        } catch (IOException ex) {
+            Logger.getLogger(GamePointsSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

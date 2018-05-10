@@ -24,8 +24,10 @@
       <Button fx:id="restart" layoutX="124.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleRestartAction" text="Aloita uusi peli" />
       <Button fx:id="highscore" layoutX="247.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleHighscoreAction" text="Huipputulokset" />
       <Button fx:id="save" layoutX="376.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleSaveAction" text="Tallenna tulos" />
-      <Label fx:id="totalPointsNs" layoutX="50.0" layoutY="292.0" />
-      <Label fx:id="totalPointsEw" layoutX="386.0" layoutY="292.0" />
-      <Label fx:id="infoLabel" layoutX="215.0" layoutY="474.0" />
+      <Label fx:id="totalPointsNs" layoutX="69.0" layoutY="292.0" />
+      <Label fx:id="totalPointsEw" layoutX="398.0" layoutY="292.0" />
+      <Label fx:id="infoLabel" layoutX="239.0" layoutY="474.0" />
+      <Text layoutX="21.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kokonaispisteet NS" />
+      <Text layoutX="350.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kokonaispisteet EW" />
    </children>
 </AnchorPane>
