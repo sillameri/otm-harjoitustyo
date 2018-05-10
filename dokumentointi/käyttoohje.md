@@ -34,7 +34,7 @@ Sovellus aukee näkymään, jossa näkyy pelin kokonaispisteet.
 
 Painamalla nappulaa *Lopeta peli* sovellus sulkeuttuu.   
 Nappulan *Aloita uusi peli* kautta voi aloittaa pelin uudelleen.  
-Nappulan *Tallenna tulos* kautta on mahdollista tallentaa loppuun pelatun pelin pisteet.
+Nappulan *Tallenna tulos* kautta on mahdollista tallentaa pelin pisteet, tämä on mahdollista vasta kun peli on pelattu loppuun.
 
 ## Erän pisteet   
 
@@ -44,5 +44,20 @@ Kokonaispisteetnäkymästä on mahdollista siirtyä erän pisteet näkymään pa
 
 Erän pisteet lasketaan täyttämällä vaaditut kentät ja painamalla nappulaa *laske*. Jos kaikkia kentät on täytetty, näkyy lasketut pisteet näkymän alalaidassa. Mikäli kaikkia kenttiä ei ole täytetty tulostuu virheteksti "Täytä kaikki kentät".     
 Painamalla nappulaa *Lisää pisteet ja palaa* siirrytään takaisin kokonaispisteet näkymään ja juuri lasketut pisteet ovat päivittyneet kokonaispisteisiin. 
+
+## Huipputulokset
+
+Huipputulokset pop-up ikkuna aukeaa painamalla painiketta *Huipputulokset*
+
+Ikkuna näyttää käyttäjälle viisi parasta peliä. 
+
+## Pelin päättyminen 
+
+Peli päättyy kun jompikumpi joukkue saa kaksi kertaa yli 100 pistettä viivan alle. Pelin päättymisestä ilmoitetaan tekstikentässä. 
+
+Pelin päätyttyä uusia erän pisteitä ei ole enää mahdollista lisätä. Sen sijaan käyttäjä voi tallentaa lopputuloksen painamalla *Tallenna tulos*, tämän jälkeen on myös mahdollista tarkasetella ovatko omat pisteet yltäneet huipputulosten joukkoon.
+
+
+
 
 
