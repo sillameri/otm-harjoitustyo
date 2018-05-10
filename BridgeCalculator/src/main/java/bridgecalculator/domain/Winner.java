@@ -15,12 +15,27 @@ public class Winner {
     private int totalPointsEw;
     private int winnerPoints;
     private int loserPoints;
+    private String team;
 
     public Winner(int totalPointsNs, int totalPointsEw) {
         this.totalPointsEw = totalPointsEw;
         this.totalPointsNs = totalPointsNs;
-        this.winnerPoints = 0;
-        this.loserPoints = 0;
+    }
+    
+   
+    public Winner(String team, int points, int loserPoints){
+        this.team = team;
+        this.winnerPoints = points;
+        this.loserPoints = loserPoints;
+    }
+    
+    
+    public int getPoints(){
+        return this.winnerPoints;
+    }
+    
+    public int getLoserPoints(){
+        return this.loserPoints;
     }
 
     public String getWinner() {
@@ -43,10 +58,13 @@ public class Winner {
         }
 
     }
+    
+    
 
     @Override
     public String toString() {
         return getWinner() + ":" + this.winnerPoints + ":" + this.loserPoints +"\n";
     }
 
+    
 }

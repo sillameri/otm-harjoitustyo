@@ -76,8 +76,7 @@ public class GamePointsSceneController implements Initializable {
 
         underLineVBox = createUnderLine();
         vbox.getChildren().add(underLineVBox);
-
-        save.setDisable(false);
+        save.setDisable(true);
 
     }
 
@@ -92,8 +91,13 @@ public class GamePointsSceneController implements Initializable {
     public Button getEndGameButton() {
         return this.exit;
     }
+    
+    public Button getReStartButton(){
+        return this.restart;
+    }
 
     public void updatePoints() {
+
         gamePoints.updateSumNsPoints();
         gamePoints.updateSumEwPoints();
 
@@ -107,6 +111,16 @@ public class GamePointsSceneController implements Initializable {
 
             underLineVBox = createUnderLine();
             gamePoints.setCurrentGame(++game);
+        }
+
+    }
+
+    public void updateGame() {
+        save.setDisable(gamePoints.GameGoing());
+        moveToRoundPoints.setDisable(!gamePoints.GameGoing());
+
+        if (gamePoints.GameGoing() == false) {
+            infoLabel.setText("Peli loppui!");
         }
     }
 
@@ -148,9 +162,9 @@ public class GamePointsSceneController implements Initializable {
 
         overLineItem.getChildren().addAll(nsLabel, sep, ewLabel);
 
-        overLineItem.setHgrow(nsLabel, Priority.ALWAYS);
-        overLineItem.setHgrow(ewLabel, Priority.ALWAYS);
-        overLineItem.setHgrow(sep, Priority.ALWAYS);
+        HBox.setHgrow(nsLabel, Priority.ALWAYS);
+        HBox.setHgrow(ewLabel, Priority.ALWAYS);
+        HBox.setHgrow(sep, Priority.ALWAYS);
 
         overLineVBox.getChildren().add(0, overLineItem);
         nOverLine++;
@@ -187,7 +201,6 @@ public class GamePointsSceneController implements Initializable {
         return underLineBox;
     }
 
-
     @FXML
     private void handleRestartAction(ActionEvent event) {
     }
@@ -202,9 +215,8 @@ public class GamePointsSceneController implements Initializable {
 
         winner = new Winner(gamePoints.getTotalPoints("ns", "ew"), gamePoints.getTotalPoints("ew", "ns"));
         winner.setWinnerAndLoserPoints();
-        fileDao = new FileBridgeCalculatorDao("data.txt", winner);
-
-        fileDao.save();
+        fileDao = new FileBridgeCalculatorDao("data.txt");
+        fileDao.save(winner);
 
     }
 

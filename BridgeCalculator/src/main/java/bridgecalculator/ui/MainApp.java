@@ -2,6 +2,8 @@ package bridgecalculator.ui;
 
 import bridgecalculator.domain.GamePointsCalculator;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,7 +20,6 @@ public class MainApp extends Application {
 
     @Override
     public void start(final Stage stage) throws Exception {
-        
 
         startGame(stage);
     }
@@ -52,6 +53,7 @@ public class MainApp extends Application {
                 if (rpsc.getRoundPointsCalculator() != null) {
                     gamePoints.addrpc(rpsc.getRoundPointsCalculator());
                     gpsc.updatePoints();
+                    gpsc.updateGame();
                 }
 
             }
@@ -66,6 +68,14 @@ public class MainApp extends Application {
 
         });
 
+        gpsc.getReStartButton().setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                restart(stage);
+
+            }
+        });
+
         Scene scene = new Scene(mainLayout1);
         scene.getStylesheets().add("/styles/Styles.css");
         stage.setTitle("Bridge Calculator");
@@ -73,8 +83,12 @@ public class MainApp extends Application {
         stage.show();
     }
 
-    public void restart(Stage stage) throws IOException {
-        startGame(stage);
+    public void restart(Stage stage) {
+        try {
+            startGame(stage);
+        } catch (IOException ex) {
+            Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }
 

@@ -98,6 +98,7 @@ public class RoundPointsSceneController implements Initializable {
         contractTrickSelected.setValue(null);
         resultTrickSelected.setValue(null);
         roundPoints = null;
+        label.setText(null);
 
     }
 

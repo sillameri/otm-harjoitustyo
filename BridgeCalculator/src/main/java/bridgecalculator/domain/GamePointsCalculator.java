@@ -19,7 +19,11 @@ public class GamePointsCalculator {
     private int underLineEw;
     private int winNs;
     private int winEw;
-    private boolean isGameGoing = false;
+    private boolean isGameGoing = true;
+    private int previousNs = 0;
+    private int previousEw = 0;
+    private boolean samaPreviosNs;
+    private boolean samePreviousEw;
 
     private String team;
     private ArrayList<RoundPointsCalculator> list;
@@ -29,40 +33,19 @@ public class GamePointsCalculator {
         this.list = new ArrayList<>();
     }
 
-//    public int getTotalPoints(String team) {
-//        int sum = 0;
-//
-//        for (RoundPointsCalculator rpc : list) {
-//            this.team = rpc.getTeam().toLowerCase();
-//            if (this.team.equals(team)) {
-//                sum += rpc.countPointsOverLineWithConditions();
-//                sum += rpc.countPointsUnderLine();
-//                sum += rpc.countLostPointsWithConditions();
-//            }
-//
-//        }
-//        int bonus = 0;
-//        if (team.equals("ns")) {
-//            if (getWinNs() == 2) {
-//                if (getWinEw() == 1) {
-//                    bonus = 500;
-//                } else {
-//                    bonus = 700;
-//                }
-//            }
-//        } else if (getWinEw() == 2) {
-//            if (getWinNs() == 1) {
-//                bonus = 500;
-//            } else {
-//                bonus = 700;
-//            }
-//        }
-//        sum += bonus;
-//
-//        return sum;
-//    }
-    
-     public int getTotalPoints(String team1, String team2) {
+    public int getBonus(String team1, String team2) {
+        int bonus = 0;
+        if (getWin(team1) == 2) {
+            isGameGoing = false;
+            bonus = 700;
+            if (getWin(team2) == 1) {
+                bonus = 500;
+            }
+        }
+        return bonus;
+    }
+
+    public int getTotalPoints(String team1, String team2) {
         int sum = 0;
 
         for (RoundPointsCalculator rpc : list) {
@@ -70,31 +53,15 @@ public class GamePointsCalculator {
             if (this.team.equals(team1)) {
                 sum += rpc.countPointsOverLineWithConditions();
                 sum += rpc.countPointsUnderLine();
-                
-            }if(this.team.equals(team2)){
+
+            }
+            if (this.team.equals(team2)) {
                 sum += rpc.countLostPointsWithConditions();
             }
 
         }
-        int bonus = 0;
-        if (team.equals("ns")) {
-            if (getWinNs() == 2) {
-                isGameGoing = false;
-                if (getWinEw() == 1) {
-                    bonus = 500;
-                } else {
-                    bonus = 700;
-                }
-            }
-        } else if (getWinEw() == 2) {
-            isGameGoing = false;
-            if (getWinNs() == 1) {
-                bonus = 500;
-            } else {
-                bonus = 700;
-            }
-        }
-        sum += bonus;
+
+        sum += getBonus(team1, team2);
 
         return sum;
     }
@@ -139,17 +106,20 @@ public class GamePointsCalculator {
         if (underLineEw >= 100) {
             winEw++;
         }
+
+        samePreviousEw = previousEw == overLineEw;
+        previousEw = overLineEw;
     }
 
-    public int getWinNs() {
-        return this.winNs;
+    public int getWin(String team) {
+        if (team.equals("ns")) {
+            return this.winNs;
+        } else {
+            return this.winEw;
+        }
     }
 
-    public int getWinEw() {
-        return this.winEw;
-    }
-    
-    public boolean GameGoing(){
+    public boolean GameGoing() {
         return this.isGameGoing;
     }
 
@@ -179,7 +149,7 @@ public class GamePointsCalculator {
     }
 
     public String getOverLineEw() {
-        if (overLineEw == 0) {
+        if (overLineEw == 0 || samePreviousEw) {
             return "";
         }
         return String.valueOf(overLineEw);
