@@ -14,7 +14,9 @@
 | 22.4          | 4            |ohjelman laajentaminen ja testien lisääminen            |
 | 1.5          | 2           |laskin valmis          |
 | 2.5          | 5            |nimeämistä, daon suunnittelua ja testit             |
-| to.4          |  6          |ohjelman laajentaminen            |
-| ma.5          | 5           |kokonaispisteitä laskeva laskin valmis          |
+| 3.4          |  6          |ohjelman laajentaminen            |
+| 7.5          | 5           |kokonaispisteitä laskeva laskin valmis          |
 | 8.5          | 4            |dokumentointia             |
-| tunteja yhteensä | 45             |           |
+| 9.5          | 5           |tiedoston lisääminen ja daon luonti         |
+| 10.5          | 8            |ohjelma valmis ja toimiva, dokumentointia            |
+| tunteja yhteensä | 58             |           |
