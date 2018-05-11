@@ -176,13 +176,9 @@ public class GamePointsCalculator {
         }
 
         samePreviousEw = previousEw == overLineEw;
-
         if (samePreviousEw == true) {
             overLineEw = 0;
         }
-
-        previousEw = overLineEw;
-
         previousEw = overLineEw;
 
         asamePreviousEw = apreviousEw == underLineEw;

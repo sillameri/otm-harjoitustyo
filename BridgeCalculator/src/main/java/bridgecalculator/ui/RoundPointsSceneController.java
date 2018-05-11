@@ -21,7 +21,6 @@ public class RoundPointsSceneController implements Initializable {
     ObservableList resultTricks = FXCollections.observableArrayList();
 
     private RoundPointsCalculator roundPoints;
-//    private GamePointsCalculator gamePoints;
 
     @FXML
     private Label label;
@@ -62,6 +61,14 @@ public class RoundPointsSceneController implements Initializable {
     @FXML
     private Button getBack;
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        setSuits();
+        setContractTricks();
+        setResultTricks();
+
+    }
+
     public RoundPointsCalculator getRoundPointsCalculator() {
         return roundPoints;
     }
@@ -100,14 +107,6 @@ public class RoundPointsSceneController implements Initializable {
         resultTrickSelected.setValue(null);
         roundPoints = null;
         label.setText(null);
-
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        setSuits();
-        setContractTricks();
-        setResultTricks();
 
     }
 
@@ -197,8 +196,5 @@ public class RoundPointsSceneController implements Initializable {
         resultTrickSelected.getItems().addAll(resultTricks);
 
     }
-
-
-    
 
 }
