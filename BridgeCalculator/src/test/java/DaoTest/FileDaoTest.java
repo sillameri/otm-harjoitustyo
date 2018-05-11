@@ -6,10 +6,7 @@
 package DaoTest;
 
 import bridgecalculator.dao.FileBridgeCalculatorDao;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -37,11 +34,4 @@ public class FileDaoTest {
         assertEquals("NS:1310:0\n", print);
     }
     
-    
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }

@@ -252,14 +252,5 @@ public class RoundPointsTest {
         assertEquals(0, points.countLostPointsWithConditions());
     }
 
-//    @Test
-//    public void retunrsPrint() {
-//        assertEquals("Tarjous: 3 Pata joukkue: ns. Tulos: 2 Yli \nVoitetut pisteet alle linjan: 90 \nVoitetut pisteet linjan päälle: 60 \n Hävityt pisteet: 0", roundpoints1.toString());
-//    }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
