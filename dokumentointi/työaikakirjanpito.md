@@ -19,4 +19,5 @@
 | 8.5          | 4            |dokumentointia             |
 | 9.5          | 5           |tiedoston lisääminen ja daon luonti         |
 | 10.5          | 8            |ohjelma valmis ja toimiva, dokumentointia            |
-| tunteja yhteensä | 58             |           |
+| 11.5          | 12            |testit, dokumentointi, viimeistely           |
+| tunteja yhteensä | 70             |           |
