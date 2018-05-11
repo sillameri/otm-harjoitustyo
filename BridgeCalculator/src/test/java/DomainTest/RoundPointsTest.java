@@ -3,84 +3,68 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package DomainTest;
 
-import bridgecalculator.domain.GamePointsCalculator;
-import org.junit.After;
-import org.junit.AfterClass;
+import bridgecalculator.domain.RoundPointsCalculator;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import bridgecalculator.domain.RoundPointsCalculator;
 
 /**
  *
  * @author Meri
  */
-public class BridgeTest {
+public class RoundPointsTest {
 
-    public BridgeTest() {
+    public RoundPointsTest() {
     }
 
     RoundPointsCalculator roundpoints1;
     RoundPointsCalculator roundpoints2;
-    GamePointsCalculator gamepoints;
 
     @Before
     public void setUp() {
         roundpoints1 = new RoundPointsCalculator("ns", "Pata", 3, 2, "Yli", "Normaali", "Vaaraton");
         roundpoints2 = new RoundPointsCalculator("ew", "Ruutu", 3, 2, "Ali", "Normaali", "Vaaraton");
 
-        gamepoints = new GamePointsCalculator();
-        
     }
 
     @Test
-    public void luotuLaskinOlemassa() {
+    public void calculatorExist() {
         assertTrue(roundpoints1 != null);
     }
 
     @Test
-    public void palauttaaTrikin() {
+    public void retunrsGame() {
+        roundpoints1.setGame(1);
+        assertEquals(1, roundpoints1.getGame());
+    }
+
+    @Test
+    public void returnsContractTrick() {
         assertEquals(3, roundpoints1.getContractTrick());
     }
 
     @Test
-    public void palauttaaTikin() {
+    public void returnsResultTrick() {
         assertEquals(2, roundpoints1.getResultTrick());
     }
 
     @Test
-    public void palauttaaJoukkueen() {
+    public void returnsTeam() {
         assertEquals("ns", roundpoints1.getTeam());
     }
 
     @Test
-    public void palauttaaMaakertoimen1() {
+    public void returnsSuitCoefficient1() {
         assertEquals(30, roundpoints1.getSuitCoefficient());
     }
 
     @Test
-    public void palauttaaMaakertoimen2() {
+    public void returnsSuitCoefficient2() {
         assertEquals(20, roundpoints2.getSuitCoefficient());
     }
 
-//    @Test
-//    public void luotuGamePointOlemassa() {
-//        assertTrue(gamepoints != null);
-//    }
-//
-//    @Test
-//    public void palauttaaNsUnderLine() {
-//        assertEquals("40", gamepoints.PointsNsUnderLine());
-//    }
-//
-//    @Test
-//    public void palauttaaNsOverLine() {
-//        assertEquals("30", gamepoints.PointsNsOverLine());
-//    }
-
-    // viiikko 6
     @Test
     public void returnsNormalOption() {
         assertEquals("Normaali", roundpoints1.getNormal());
@@ -201,6 +185,77 @@ public class BridgeTest {
         RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 4, 4, "Ali", "Normaali", "Vaaraton");;
         assertEquals(800, points.countUnVulnerableLostPoints());
     }
+
+    @Test
+    public void retunrsUnVulnerableLostPoints4() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 4, 4, "Yli", "Normaali", "Vaaraton");;
+        assertEquals(0, points.countUnVulnerableLostPoints());
+    }
+
+    @Test
+    public void retunrsVulnerableLostPoints1() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Normaali", "Vaaraton");;
+        assertEquals(200, points.countVulnerableLostPoints());
+    }
+
+    @Test
+    public void retunrsVulnerableLostPoints2() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 3, 3, "Ali", "Normaali", "Vaaraton");;
+        assertEquals(800, points.countVulnerableLostPoints());
+    }
+
+    @Test
+    public void retunrsVulnerableLostPoints3() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 4, 4, "Yli", "Normaali", "Vaaraton");;
+        assertEquals(0, points.countUnVulnerableLostPoints());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions1() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Normaali", "Vaaraton");;
+        assertEquals(50, points.countLostPointsWithConditions());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions2() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Kahdennettu", "Vaaraton");;
+        assertEquals(100, points.countLostPointsWithConditions());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions3() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Vastakahdennettu", "Vaaraton");;
+        assertEquals(200, points.countLostPointsWithConditions());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions4() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Normaali", "Vaarassa");;
+        assertEquals(100, points.countLostPointsWithConditions());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions5() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Kahdennettu", "Vaarassa");;
+        assertEquals(200, points.countLostPointsWithConditions());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions6() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Ali", "Vastakahdennettu", "Vaarassa");;
+        assertEquals(400, points.countLostPointsWithConditions());
+    }
+
+    @Test
+    public void retunrsLostPointsWithConditions7() {
+        RoundPointsCalculator points = new RoundPointsCalculator("ns", "Valtiton", 1, 1, "Yli", "Vastakahdennettu", "Vaarassa");;
+        assertEquals(0, points.countLostPointsWithConditions());
+    }
+
+//    @Test
+//    public void retunrsPrint() {
+//        assertEquals("Tarjous: 3 Pata joukkue: ns. Tulos: 2 Yli \nVoitetut pisteet alle linjan: 90 \nVoitetut pisteet linjan päälle: 60 \n Hävityt pisteet: 0", roundpoints1.toString());
+//    }
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

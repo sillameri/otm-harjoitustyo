@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package WinnerResutTest;
+package DomainTest;
 
 import bridgecalculator.domain.Result;
 import bridgecalculator.domain.Winner;
@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author Meri
  */
-public class WinnerTest {
+public class WinnerResultTest {
 
-    public WinnerTest() {
+    public WinnerResultTest() {
     }
 
     Winner winner1;
