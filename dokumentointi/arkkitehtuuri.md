@@ -33,12 +33,12 @@ Sovellus tallettaa päättyneen pelin lopputuloksen tiedostoon.
 
 Sovellus tallettaa tulokset seuraavassa formaatissa:
 
-'''
-NS:150:0
-EW:900:140
-EW:160:50
-NS:130:0
-'''
+```
+NS:150:0     
+EW:900:140     
+EW:160:50     
+NS:130:0     
+```
 
 
 
