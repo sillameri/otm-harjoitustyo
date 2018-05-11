@@ -1,8 +1,8 @@
 # Arkkitehtuurikuvaus
 
 ## Rakenne
-Ohjelman rakenne on tällä hetkellä kaksiosainen, pakkausrakenne sisältää pakkaukset bridgecalculator.ui (käyttöliittymät) ja bridgecalculator.domain (sovelluslogiikka).
-bridgecalculator.ui on toteutettu JavaFXML:llä ja sisältää luokat MainApp, RoundPointsController ja GamePintsController.
+Ohjelman rakenne on kolmiosainen, pakkausrakenne sisältää pakkaukset bridgecalculator.ui (käyttöliittymät) ja bridgecalculator.domain (sovelluslogiikka) ja brbridgecalculator.dao (tietojen pysyväistalletus).
+Pakkaus bridgecalculator.ui on toteutettu JavaFXML:llä ja se sisältää luokat MainApp, RoundPointsSceneController, GamePointsSceneController sekä HighPointsSceneController.
 bridgecalculator.domain sisältää luokat RoundPointsCalculator, joka lasekee annettujen arvojen avulla erän pisteet sekä luokan GamePointsCalculator joka laskee pelin kokonaispisteitä.
 
 Pakkaus bridgecalculator.dao tulee sisältämään luokan, joka vastaa pysyväistalletuksesta.
