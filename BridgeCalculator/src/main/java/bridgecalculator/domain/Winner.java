@@ -11,55 +11,32 @@ package bridgecalculator.domain;
  */
 public class Winner {
 
-    private int totalPointsNs;
-    private int totalPointsEw;
     private int winnerPoints;
     private int loserPoints;
     private String team;
 
-    public Winner(int totalPointsNs, int totalPointsEw) {
-        this.totalPointsEw = totalPointsEw;
-        this.totalPointsNs = totalPointsNs;
-    }
 
-    public Winner(String team, int points, int loserPoints) {
+    public Winner(String team, int points1, int points2) {
         this.team = team;
-        this.winnerPoints = points;
-        this.loserPoints = loserPoints;
+        this.winnerPoints = points1;
+        this.loserPoints = points2;
     }
 
-    public int getPoints() {
+    public int getWinnerPoints() {
         return this.winnerPoints;
     }
 
     public int getLoserPoints() {
         return this.loserPoints;
     }
-
-    public String getWinner() {
-        String winner = "";
-        if (this.totalPointsEw > this.totalPointsNs) {
-            winner = "EW";
-        } else {
-            winner = "NS";
-        }
-        return winner;
-    }
-
-    public void setWinnerAndLoserPoints() {
-        if (getWinner().equals("NS")) {
-            this.winnerPoints = this.totalPointsNs;
-            this.loserPoints = this.totalPointsEw;
-        } else {
-            this.winnerPoints = this.totalPointsEw;
-            this.loserPoints = this.totalPointsNs;
-        }
-
+    
+    public String getWinner(){
+        return this.team;
     }
 
     @Override
     public String toString() {
-        return getWinner() + ":" + this.winnerPoints + ":" + this.loserPoints + "\n";
+        return this.team + ":" + this.winnerPoints + ":" + this.loserPoints + "\n";
     }
 
 }

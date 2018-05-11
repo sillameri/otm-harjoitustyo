@@ -1,43 +1,46 @@
 package bridgecalculator.ui;
 
+import javafx.application.Application;
 import bridgecalculator.domain.GamePointsCalculator;
-import bridgecalculator.domain.RoundPointsCalculator;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import static javafx.application.Application.launch;
 
 public class MainApp extends Application {
 
-    private Stage stage;
-    private GamePointsCalculator gamePoints;
-    private RoundPointsCalculator roundPoints;
-    private Scene gamePointsScene;
-    private Scene roundPointsScene;
-    
+    private GamePointsCalculator gameCalculator;
 
     @Override
     public void init() throws IOException {
-
-       
-
     }
 
     @Override
     public void start(final Stage stage) throws Exception {
-       
         startGame(stage);
+
+    }
+
+    /**
+     * The main() method is ignored in correctly deployed JavaFX application.
+     * main() serves only as fallback in case the application can not be
+     * launched through deployment artifacts, e.g., in IDEs with limited FX
+     * support. NetBeans ignores main().
+     *
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
     }
 
     private void startGame(final Stage stage) throws IOException {
-        gamePoints = new GamePointsCalculator();
+        gameCalculator = new GamePointsCalculator();
 
         FXMLLoader loader2 = new FXMLLoader();
         loader2.setLocation(getClass().getResource("/fxml/RoundPointsScene.fxml"));
@@ -48,7 +51,7 @@ public class MainApp extends Application {
         loader1.setLocation(getClass().getResource("/fxml/GamePointsScene.fxml"));
         final Parent mainLayout1 = loader1.load();
         final GamePointsSceneController gpsc = loader1.getController();
-        gpsc.setGamePointsCalculator(gamePoints);
+        gpsc.setGamePointsCalculator(gameCalculator);
 
         gpsc.getBackButton().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -63,9 +66,9 @@ public class MainApp extends Application {
             public void handle(ActionEvent event) {
                 stage.getScene().setRoot(mainLayout1);
                 if (rpsc.getRoundPointsCalculator() != null) {
-                    gamePoints.addrpc(rpsc.getRoundPointsCalculator());
-                    gpsc.updatePoints();
-                    gpsc.updateGame();
+                    gameCalculator.addrpc(rpsc.getRoundPointsCalculator());
+                    gpsc.addUpdatedPoints();
+                    gpsc.addGameOverInfo();
                 }
 
             }
@@ -103,18 +106,4 @@ public class MainApp extends Application {
         }
 
     }
-    
-
-    /**
-     * The main() method is ignored in correctly deployed JavaFX application.
-     * main() serves only as fallback in case the application can not be
-     * launched through deployment artifacts, e.g., in IDEs with limited FX
-     * support. NetBeans ignores main().
-     *
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 }

@@ -51,6 +51,6 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="ew" layoutX="322.0" layoutY="63.0" mnemonicParsing="false" text="EW" toggleGroup="$team" />
-      <Button fx:id="getBack" layoutX="280.0" layoutY="479.0" mnemonicParsing="false" onAction="#handleMoveAndAddAction" text="Lisää pisteet ja palaa" />
+      <Button fx:id="getBack" layoutX="280.0" layoutY="479.0" mnemonicParsing="false" text="Lisää pisteet ja palaa" />
    </children>
 </AnchorPane>

@@ -7,7 +7,7 @@ package bridgecalculator.ui;
 
 import bridgecalculator.dao.FileBridgeCalculatorDao;
 import bridgecalculator.domain.GamePointsCalculator;
-import bridgecalculator.domain.Winner;
+import bridgecalculator.domain.Result;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,7 +40,6 @@ public class GamePointsSceneController implements Initializable {
 
     private GamePointsCalculator gamePoints;
     private FileBridgeCalculatorDao fileDao;
-    private Winner winner;
 
     @FXML
     private VBox vbox;
@@ -125,14 +124,14 @@ public class GamePointsSceneController implements Initializable {
     @FXML
     private void handleSaveAction(ActionEvent event) throws Exception {
 
-        winner = new Winner(gamePoints.getTotalPoints("ns", "ew"), gamePoints.getTotalPoints("ew", "ns"));
-        winner.setWinnerAndLoserPoints();
+        Result result = new Result(gamePoints.getTotalPoints("ns", "ew"), gamePoints.getTotalPoints("ew", "ns"));
         fileDao = new FileBridgeCalculatorDao("data.txt");
-        fileDao.save(winner);
+        fileDao.save(result);
 
     }
 
-    public void updatePoints() {
+
+    public void addUpdatedPoints() {
 
         gamePoints.updateSumNsPoints();
         gamePoints.updateSumEwPoints();
@@ -151,7 +150,7 @@ public class GamePointsSceneController implements Initializable {
 
     }
 
-    public void updateGame() {
+    public void addGameOverInfo() {
         save.setDisable(gamePoints.gameGoing());
         moveToRoundPoints.setDisable(!gamePoints.gameGoing());
 
@@ -159,7 +158,8 @@ public class GamePointsSceneController implements Initializable {
             infoLabel.setText("Peli loppui!");
         }
     }
-
+    
+    
     private void addItemOverLine() {
         HBox overLineItem = new HBox();
         overLineItem.setSpacing(60);

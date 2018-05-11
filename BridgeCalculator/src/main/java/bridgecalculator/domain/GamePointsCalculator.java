@@ -33,9 +33,6 @@ public class GamePointsCalculator {
     private ArrayList<RoundPointsCalculator> list;
     private int currentGame;
 
-    /**
-     *
-     */
     public GamePointsCalculator() {
         this.list = new ArrayList<>();
     }
@@ -44,40 +41,16 @@ public class GamePointsCalculator {
         return this.isGameGoing;
     }
 
-    /**
-     *
-     * @param roundPointsCalculator
-     */
+    public void setCurrentGame(int currentGame) {
+        this.currentGame = currentGame;
+    }
+
     public void addrpc(RoundPointsCalculator roundPointsCalculator) {
         roundPointsCalculator.setGame(currentGame);
         list.add(roundPointsCalculator);
 
     }
 
-    /**
-     *
-     * @param team1
-     * @param team2
-     * @return
-     */
-    public int getBonus(String team1, String team2) {
-        int bonus = 0;
-        if (getWin(team1) == 2) {
-            isGameGoing = false;
-            bonus = 700;
-            if (getWin(team2) == 1) {
-                bonus = 500;
-            }
-        }
-        return bonus;
-    }
-
-    /**
-     *
-     * @param team1
-     * @param team2
-     * @return
-     */
     public int getTotalPoints(String team1, String team2) {
         int sum = 0;
 
@@ -99,10 +72,56 @@ public class GamePointsCalculator {
         return sum;
     }
 
-    /**
-     * päivittää NS joukkueen pisteet viivan alle ja viivan päälle.
-     *
-     */
+    public int getBonus(String team1, String team2) {
+        int bonus = 0;
+        if (getWin(team1) == 2) {
+            isGameGoing = false;
+            bonus = 700;
+            if (getWin(team2) == 1) {
+                bonus = 500;
+            }
+        }
+        return bonus;
+    }
+
+    public int getWin(String team) {
+        if (team.equals("ns")) {
+            return this.winNs;
+        } else {
+            return this.winEw;
+        }
+    }
+
+    public int getUnderLine(String team) {
+        if (team.equals("ns") && underLineNs != 0) {
+            return underLineNs;
+        }
+        if (team.equals("ew") && underLineEw != 0) {
+            return underLineEw;
+        } else {
+            return 0;
+        }
+    }
+
+    public String getUnderLineString(String team) {
+        String points = " ";
+        if (getUnderLine(team) != 0) {
+            return points.valueOf(getUnderLine(team));
+        }
+        return points;
+    }
+
+    public String getOverLine(String team) {
+        String points = " ";
+        if (team.equals("ns") && overLineNs != 0) {
+            points = "" + overLineNs;
+        }
+        if (team.equals("ew") && overLineEw != 0) {
+            points = "" + overLineEw;
+        }
+        return points;
+    }
+
     public void updateSumNsPoints() {
         this.overLineNs = 0;
         this.underLineNs = 0;
@@ -128,7 +147,7 @@ public class GamePointsCalculator {
             overLineNs = 0;
         }
         previousNs = overLineNs;
-        
+
         asamePreviousNs = apreviousNs == underLineNs;
         if (asamePreviousNs == true) {
             underLineNs = 0;
@@ -137,9 +156,6 @@ public class GamePointsCalculator {
         apreviousNs = underLineNs;
     }
 
-    /**
-     *
-     */
     public void updateSumEwPoints() {
         this.overLineEw = 0;
         this.underLineEw = 0;
@@ -166,9 +182,9 @@ public class GamePointsCalculator {
         }
 
         previousEw = overLineEw;
-        
+
         previousEw = overLineEw;
-        
+
         asamePreviousEw = apreviousEw == underLineEw;
         if (asamePreviousEw == true) {
             underLineEw = 0;
@@ -176,67 +192,4 @@ public class GamePointsCalculator {
 
         apreviousEw = underLineEw;
     }
-
-    /**
-     *
-     * @param team
-     * @return
-     */
-    public int getWin(String team) {
-        if (team.equals("ns")) {
-            return this.winNs;
-        } else {
-            return this.winEw;
-        }
-    }
-
-    public void setCurrentGame(int currentGame) {
-        this.currentGame = currentGame;
-    }
-
-    /**
-     *
-     * @param team
-     * @return
-     */
-    public int getUnderLine(String team) {
-        if (team.equals("ns") && underLineNs != 0) {
-            return underLineNs;
-        }
-        if (team.equals("ew") && underLineEw != 0) {
-            return underLineEw;
-        } else {
-            return 0;
-        }
-    }
-
-    /**
-     *
-     * @param team
-     * @return
-     */
-    public String getUnderLineString(String team) {
-        String points = " ";
-        if (getUnderLine(team) != 0) {
-            return points.valueOf(getUnderLine(team));
-        }
-        return points;
-    }
-
-    /**
-     *
-     * @param team
-     * @return
-     */
-    public String getOverLine(String team) {
-        String points = " ";
-        if (team.equals("ns") && overLineNs != 0) {
-            points = "" + overLineNs;
-        }
-        if (team.equals("ew") && overLineEw != 0) {
-            points = "" + overLineEw;
-        }
-        return points;
-    }
-
 }

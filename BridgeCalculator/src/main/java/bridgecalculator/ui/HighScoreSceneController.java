@@ -42,7 +42,7 @@ public class HighScoreSceneController implements Initializable {
         String print = "";
         for (int i = 0; i < toplist.size(); i++) {
             Winner w = toplist.get(i);
-            print += (i + 1) + ". " + w.getWinner() + "  " + w.getPoints() + " (" + w.getLoserPoints() + ")" + "\n";
+            print += (i + 1) + ". " + w.getWinner() + "  " + w.getWinnerPoints() + " (" + w.getLoserPoints() + ")" + "\n";
         }
 
         highScoreLabel.setText(print);

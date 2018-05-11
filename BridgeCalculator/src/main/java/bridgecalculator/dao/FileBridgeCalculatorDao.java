@@ -5,6 +5,7 @@
  */
 package bridgecalculator.dao;
 
+import bridgecalculator.domain.Result;
 import bridgecalculator.domain.Winner;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -34,9 +35,9 @@ public class FileBridgeCalculatorDao {
         winners.add(winner);
     }
 
-    public void save(Winner winner) throws IOException {
+    public void save(Result result) throws IOException {
         try (FileWriter writer = new FileWriter(file, true)) {
-            writer.write(winner.toString());
+            writer.write(result.toString());
 
         }
     }
@@ -62,7 +63,7 @@ public class FileBridgeCalculatorDao {
     public List<Winner> getTop(int a) {
         List<Winner> toplist = new ArrayList();
 
-        Collections.sort(winners, (Winner o1, Winner o2) -> o2.getPoints() - o1.getPoints());
+        Collections.sort(winners, (Winner o1, Winner o2) -> o2.getWinnerPoints() - o1.getWinnerPoints());
 
         int counter = 0;
         for (Winner winner : winners) {

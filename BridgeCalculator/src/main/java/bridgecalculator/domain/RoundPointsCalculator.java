@@ -237,8 +237,6 @@ public class RoundPointsCalculator {
 
     }
 
-    public int getUnderline() {
-        return u;
-    }
+   
 
 }
