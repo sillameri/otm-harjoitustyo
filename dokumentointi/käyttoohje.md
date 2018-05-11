@@ -1,8 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [BridgeCalculator.jar](./BridgeCalcularor.jar)  ei toimi!!!
-
-## Konfigurointi ???
+Lataa tiedosto [BridgeCalculator.jar](https://github.com/sillameri/otm-harjoitustyo/releases/tag/Loppupalautus) 
 
 ## Ohjelman käynnistäminen 
 
