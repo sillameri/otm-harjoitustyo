@@ -4,12 +4,13 @@ Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet.
 
 
 ## Dokumentaatio
-[Maarittelydokumentti](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
+[Käyttöohje](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/k%C3%A4yttoohje.md)
 
-[Työaikakirjanpito](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)
+[Maarittelydokumentti](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/maarittelydokumentti.md)
 
 [Arkkitehtuuri](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
 
+[Työaikakirjanpito](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/ty%C3%B6aikakirjanpito.md)
 
 ## Releaset
 
