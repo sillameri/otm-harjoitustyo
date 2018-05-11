@@ -19,3 +19,5 @@ Näkymät on muodostettu Scenebuilderin avulla ja käyttöliittymä on pyritty e
 Alla luokkakaavio, jossa luokka Kokonaispisteet(GamePoints) ja luokka Eränpisteet(RoundPoints). 
 
 ![kuva](https://yuml.me/442a1aa3.jpg)
+
+![](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/kuvat/diagram1.png)
