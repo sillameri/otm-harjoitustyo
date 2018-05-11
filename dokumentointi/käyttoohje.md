@@ -40,7 +40,7 @@ Nappulan *Tallenna tulos* kautta on mahdollista tallentaa pelin pisteet, tämä 
 
 Kokonaispisteetnäkymästä on mahdollista siirtyä erän pisteet näkymään panikkeella *Lisää kierroksen pisteet*.    
 
-![](/dokumentointi/kuvat/tyhjäerä.png)![](/dokumentointi/kuvat/pisteeterä.png)
+![](/dokumentointi/kuvat/pisteeterä.png)
 
 Erän pisteet lasketaan täyttämällä vaaditut kentät ja painamalla nappulaa *laske*. Jos kaikkia kentät on täytetty, näkyy lasketut pisteet näkymän alalaidassa. Mikäli kaikkia kenttiä ei ole täytetty tulostuu virheteksti "Täytä kaikki kentät".     
 Painamalla nappulaa *Lisää pisteet ja palaa* siirrytään takaisin kokonaispisteet näkymään ja juuri lasketut pisteet ovat päivittyneet kokonaispisteisiin. 
