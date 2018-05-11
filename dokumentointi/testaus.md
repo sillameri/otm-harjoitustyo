@@ -19,6 +19,8 @@ Dao luokan testaus tapahtuu testikansiossa DaoTest, luokassa FileDaoTest. Luokka
 
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 85% ja haarautumakattavuus 80%
 
+![](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/kuvat/test.png)
+
 
 ## Järjestelmätestaus
 
