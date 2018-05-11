@@ -39,6 +39,15 @@ EW:900:140
 EW:160:50     
 NS:130:0     
 ```
+Ensin voittanut joukkue tämän jälkeen kaksoispisteellä erotettuna voittajan pisteet ja häviäjän pisteet.
+
+## Päätoiminnallisuudet
+
+Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
+
+
+
+
 
 
 
