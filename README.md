@@ -52,3 +52,13 @@ Jar-tiedosto luodaan komennolla:
 mvn package  
 ```
 Tämän jälkeen ohjelman voi suorittaa komennolla: java -jar BridgeCalculator-1.0-SNAPSHOT.jar
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc 
+```
+JavaDocia voi tarkastella avaamalla selaimella tiedosto target/site/apidocs/index.html
+
