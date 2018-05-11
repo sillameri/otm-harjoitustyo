@@ -45,9 +45,23 @@ Ensin voittanut joukkue tämän jälkeen kaksoispisteellä erotettuna voittajan 
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
 
+### Erän pisteiden laskeminen
 
+Kun eränpisteet näkymässä on syötetty kaikki vaadittavat tiedot ja klikataan painiketta *Laske* etenee sovellus seuraavasti:
 
+![](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssi1.png)
 
+Painikkeen painamiseen reagoiva tapahtumankäsittelijä testaa ensin onko käyttäjä täyttänyt oikein kaikki vaadittavat kentät. Tämän jälkeen se luo uuden sovelluslogiikan GamePointsCalculator luokan. Luonnin jälkeen kutsutaan luokan toString metodia, joka palauttaa laskimen laskemat arvot. Soveluksen eteneminen päättyy kun palautettu merkkijono on tulostettu tekstikenttään. 
+
+### Pelin tuloksen tallentaminen 
+
+Kun peli on päättynyt on mahdollista tallentaa pelin pisteet painamalla *Tallenna tulos* painiketta. Sovellus etenee tällöon seuraavasti.
+
+![](https://github.com/sillameri/otm-harjoitustyo/blob/master/dokumentointi/kuvat/sekvenssi2.png)
+
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+Ohjelman rakennetta voisi selventää, ja sovelluslogiikkaa eriyttää vieläkin enemmän käyttöliittymästä. Osa luokista on laajoja, niitä olisi voinut jakaa useammaksi luokaksi. 
 
 
 
