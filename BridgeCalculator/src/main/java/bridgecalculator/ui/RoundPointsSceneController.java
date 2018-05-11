@@ -1,5 +1,6 @@
 package bridgecalculator.ui;
 
+import bridgecalculator.domain.GamePointsCalculator;
 import bridgecalculator.domain.RoundPointsCalculator;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,8 +20,10 @@ public class RoundPointsSceneController implements Initializable {
     ObservableList suits = FXCollections.observableArrayList();
     ObservableList contractTricks = FXCollections.observableArrayList();
     ObservableList resultTricks = FXCollections.observableArrayList();
-    
+
     private RoundPointsCalculator roundPoints;
+    private GamePointsCalculator gamePoints;
+    private MainApp application;
 
     @FXML
     private Label label;
@@ -69,7 +72,6 @@ public class RoundPointsSceneController implements Initializable {
         return this.getBack;
     }
 
-    @FXML
     private void handleButtonAction(ActionEvent event) {
         String team = selectedTeam(event);
         String suit = (String) suitSelected.getValue();
@@ -195,6 +197,15 @@ public class RoundPointsSceneController implements Initializable {
         resultTricks.addAll(x, a, b, c, d, e, f, g);
         resultTrickSelected.getItems().addAll(resultTricks);
 
+    }
+
+    @FXML
+    private void handleMoveAndAddAction(ActionEvent event) {
+      
+    }
+
+    @FXML
+    private void handleCalculateAction(ActionEvent event) {
     }
 
 }

@@ -95,87 +95,6 @@ public class GamePointsSceneController implements Initializable {
         return this.restart;
     }
 
-    public void updatePoints() {
-
-        gamePoints.updateSumNsPoints();
-        gamePoints.updateSumEwPoints();
-
-        addItemOverLine();
-        addItemUnderLine();
-
-        totalPointsNs.setText("" + gamePoints.getTotalPoints("ns", "ew"));
-        totalPointsEw.setText("" + gamePoints.getTotalPoints("ew", "ns"));
-
-        if (gamePoints.getUnderLine("ew") >= 100 || gamePoints.getUnderLine("ns") >= 100) {
-
-            underLineVBox = createUnderLine();
-            gamePoints.setCurrentGame(++game);
-        }
-
-    }
-
-    public void updateGame() {
-        save.setDisable(gamePoints.gameGoing());
-        moveToRoundPoints.setDisable(!gamePoints.gameGoing());
-
-        if (gamePoints.gameGoing() == false) {
-            infoLabel.setText("Peli loppui!");
-        }
-    }
-
-   
-
-    private void addItemOverLine() {
-        HBox overLineItem = new HBox();
-        overLineItem.setSpacing(60);
-
-        Label nsLabel = new Label(gamePoints.getOverLine("ns"));
-        Label ewLabel = new Label(gamePoints.getOverLine("ew"));
-
-        Separator sep = new Separator();
-        sep.setOrientation(Orientation.VERTICAL);
-
-        overLineItem.getChildren().addAll(nsLabel, sep, ewLabel);
-
-        overLineVBox.getChildren().add(0, overLineItem);
-        nOverLine++;
-    }
-
-    private void addItemUnderLine() {
-        HBox underLineItem = new HBox();
-        underLineItem.setSpacing(60);
-        
-        Label nsLabel = new Label(gamePoints.getUnderLineString("ns"));
-        Label ewLabel = new Label(gamePoints.getUnderLineString("ew"));
-
-        Separator sep = new Separator();
-        sep.setOrientation(Orientation.VERTICAL);
-
-        underLineItem.getChildren().addAll(nsLabel, sep, ewLabel);
-
-        underLineVBox.getChildren().add(underLineItem);
-        nUnderLine++;
-    }
-
-    private VBox createUnderLine() {
-        VBox container = new VBox();
-        container.setPadding(new Insets(10, 0, 0, 0));
-        container.getChildren().add(new Separator());
-
-        VBox underLineBox = new VBox();
-        ScrollPane scroll = new ScrollPane(underLineBox);
-        scroll.setStyle("-fx-background-color:transparent;");
-        container.getChildren().add(scroll);
-
-        vbox.getChildren().add(container);
-
-        return underLineBox;
-    }
-
-    @FXML
-    private void handleRestartAction(ActionEvent event) {
-    }
-
     @FXML
     private void handleHighscoreAction(ActionEvent event) {
         try {
@@ -211,6 +130,81 @@ public class GamePointsSceneController implements Initializable {
         fileDao = new FileBridgeCalculatorDao("data.txt");
         fileDao.save(winner);
 
+    }
+
+    public void updatePoints() {
+
+        gamePoints.updateSumNsPoints();
+        gamePoints.updateSumEwPoints();
+
+        addItemOverLine();
+        addItemUnderLine();
+
+        totalPointsNs.setText("" + gamePoints.getTotalPoints("ns", "ew"));
+        totalPointsEw.setText("" + gamePoints.getTotalPoints("ew", "ns"));
+
+        if (gamePoints.getUnderLine("ew") >= 100 || gamePoints.getUnderLine("ns") >= 100) {
+
+            underLineVBox = createUnderLine();
+            gamePoints.setCurrentGame(++game);
+        }
+
+    }
+
+    public void updateGame() {
+        save.setDisable(gamePoints.gameGoing());
+        moveToRoundPoints.setDisable(!gamePoints.gameGoing());
+
+        if (gamePoints.gameGoing() == false) {
+            infoLabel.setText("Peli loppui!");
+        }
+    }
+
+    private void addItemOverLine() {
+        HBox overLineItem = new HBox();
+        overLineItem.setSpacing(60);
+
+        Label nsLabel = new Label(gamePoints.getOverLine("ns"));
+        Label ewLabel = new Label(gamePoints.getOverLine("ew"));
+
+        Separator sep = new Separator();
+        sep.setOrientation(Orientation.VERTICAL);
+
+        overLineItem.getChildren().addAll(nsLabel, sep, ewLabel);
+
+        overLineVBox.getChildren().add(0, overLineItem);
+        nOverLine++;
+    }
+
+    private void addItemUnderLine() {
+        HBox underLineItem = new HBox();
+        underLineItem.setSpacing(60);
+
+        Label nsLabel = new Label(gamePoints.getUnderLineString("ns"));
+        Label ewLabel = new Label(gamePoints.getUnderLineString("ew"));
+
+        Separator sep = new Separator();
+        sep.setOrientation(Orientation.VERTICAL);
+
+        underLineItem.getChildren().addAll(nsLabel, sep, ewLabel);
+
+        underLineVBox.getChildren().add(underLineItem);
+        nUnderLine++;
+    }
+
+    private VBox createUnderLine() {
+        VBox container = new VBox();
+        container.setPadding(new Insets(10, 0, 0, 0));
+        container.getChildren().add(new Separator());
+
+        VBox underLineBox = new VBox();
+        ScrollPane scroll = new ScrollPane(underLineBox);
+        scroll.setStyle("-fx-background-color:transparent;");
+        container.getChildren().add(scroll);
+
+        vbox.getChildren().add(container);
+
+        return underLineBox;
     }
 
 }

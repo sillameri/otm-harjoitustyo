@@ -1,6 +1,7 @@
 package bridgecalculator.ui;
 
 import bridgecalculator.domain.GamePointsCalculator;
+import bridgecalculator.domain.RoundPointsCalculator;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,17 +10,29 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import static javafx.application.Application.launch;
 
 public class MainApp extends Application {
 
+    private Stage stage;
     private GamePointsCalculator gamePoints;
+    private RoundPointsCalculator roundPoints;
+    private Scene gamePointsScene;
+    private Scene roundPointsScene;
+    
+
+    @Override
+    public void init() throws IOException {
+
+       
+
+    }
 
     @Override
     public void start(final Stage stage) throws Exception {
+       
         startGame(stage);
     }
 
@@ -90,6 +103,7 @@ public class MainApp extends Application {
         }
 
     }
+    
 
     /**
      * The main() method is ignored in correctly deployed JavaFX application.
