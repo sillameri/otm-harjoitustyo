@@ -1,6 +1,6 @@
 # Bridge Pistelaskuri
 
-Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet.
+Ohjelma jolla käyttäjä voi laskea Bridge-korttipelin pisteet.
 
 
 ## Dokumentaatio
@@ -17,7 +17,10 @@ Ohjelma jolla peljaajat voivat laskea Bridge-korttipelin pisteet.
 ## Releaset
 
 [viikko 5](https://github.com/sillameri/otm-harjoitustyo/releases/tag/viikko5)  
+
 [viikko 6](https://github.com/sillameri/otm-harjoitustyo/releases/tag/viikko6)
+
+[Loppupalautus](https://github.com/sillameri/otm-harjoitustyo/releases/tag/Loppupalautus)
 
 ## Komentorivitoiminnot
 
