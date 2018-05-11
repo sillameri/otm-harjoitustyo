@@ -7,7 +7,7 @@ Ohjelman rakenne on kolmiosainen ja sen luokkakaavio on seuraava.
 
 Luokkakaaviossa ylhäällä on käyttöliittymä, keskellä sovelluslogiikka ja alhaalla pysyväistallennus.    
 
-pakkausrakenne sisältää pakkaukset bridgecalculator.ui (käyttöliittymä) ja bridgecalculator.domain (sovelluslogiikka) ja bridgecalculator.dao (tietojen pysyväistalletus).
+Pakkausrakenne sisältää pakkaukset bridgecalculator.ui (käyttöliittymä) ja bridgecalculator.domain (sovelluslogiikka) ja bridgecalculator.dao (tietojen pysyväistalletus).
 
 
 ## Käyttöliittymä
@@ -27,9 +27,19 @@ Sovelluslogiikka sijaitsee pakkauksessa bridgecalculator.domain, joka sisältä�
 
 Pysyväistalletus sijaitsee pakkauksessa bridgecalculator.dao. Luokka FileBrigdeCalculatorDao huolehtii tiedon tallettamisesta tiedostoon.
 
-## Luokkakaavio
-Alla luokkakaavio, jossa luokka Kokonaispisteet(GamePoints) ja luokka Eränpisteet(RoundPoints). 
+### Tiedosto
 
-![kuva](https://yuml.me/442a1aa3.jpg)
+Sovellus tallettaa päättyneen pelin lopputuloksen tiedostoon.
+
+Sovellus tallettaa tulokset seuraavassa formaatissa:
+
+'''
+NS:150:0
+EW:900:140
+EW:160:50
+NS:130:0
+'''
+
+
 
 
