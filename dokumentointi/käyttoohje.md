@@ -30,7 +30,7 @@ Joukkue joka saa ensimmäisenä viivan alle 100 pistettä on "vaarassa" kunnes t
 
 Sovellus aukee näkymään, jossa näkyy pelin kokonaispisteet.
 
-![](/dokumentointi/kuvat/Kokonaispisteet1.png)
+![](/dokumentointi/kuvat/tyhjäpeli.png) 
 
 Painamalla nappulaa *Lopeta peli* sovellus sulkeuttuu.   
 Nappulan *Aloita uusi peli* kautta voi aloittaa pelin uudelleen.  
@@ -40,7 +40,7 @@ Nappulan *Tallenna tulos* kautta on mahdollista tallentaa pelin pisteet, tämä 
 
 Kokonaispisteetnäkymästä on mahdollista siirtyä erän pisteet näkymään panikkeella *Lisää kierroksen pisteet*.    
 
-![](/dokumentointi/kuvat/Eräpisteet.png)
+![](/dokumentointi/kuvat/tyhjäerä.png)![](/dokumentointi/kuvat/pisteeterä.png)
 
 Erän pisteet lasketaan täyttämällä vaaditut kentät ja painamalla nappulaa *laske*. Jos kaikkia kentät on täytetty, näkyy lasketut pisteet näkymän alalaidassa. Mikäli kaikkia kenttiä ei ole täytetty tulostuu virheteksti "Täytä kaikki kentät".     
 Painamalla nappulaa *Lisää pisteet ja palaa* siirrytään takaisin kokonaispisteet näkymään ja juuri lasketut pisteet ovat päivittyneet kokonaispisteisiin. 
@@ -49,11 +49,15 @@ Painamalla nappulaa *Lisää pisteet ja palaa* siirrytään takaisin kokonaispis
 
 Huipputulokset pop-up ikkuna aukeaa painamalla painiketta *Huipputulokset*
 
+![](/dokumentointi/kuvat/Huippu.png)
+
 Ikkuna näyttää käyttäjälle viisi parasta peliä. 
 
 ## Pelin päättyminen 
 
 Peli päättyy kun jompikumpi joukkue saa kaksi kertaa yli 100 pistettä viivan alle. Pelin päättymisestä ilmoitetaan tekstikentässä. 
+
+![](/dokumentointi/kuvat/Peliloppu.png)
 
 Pelin päätyttyä uusia erän pisteitä ei ole enää mahdollista lisätä. Sen sijaan käyttäjä voi tallentaa lopputuloksen painamalla *Tallenna tulos*, tämän jälkeen on myös mahdollista tarkasetella ovatko omat pisteet yltäneet huipputulosten joukkoon.
 
